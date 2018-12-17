@@ -2,7 +2,7 @@
 import { InventoryDateDropDownList } from './InventoryDateDropDownList';
 import { WarehouseDropDownList } from './WarehouseDropDownList';
 import { PlaceDropDownList } from './PlaceDropDownList';
-
+import { InventoryHeadTable } from './InventoryHeadTable';
 
 export class InventoryHead extends Component {
     displayName = InventoryHead.name
@@ -37,7 +37,9 @@ export class InventoryHead extends Component {
                 <InventoryDateDropDownList updateData={this.updateInventoryDateId} />
                 <WarehouseDropDownList updateData={this.updateWarehouseId} />
                 <PlaceDropDownList WareHouseId={this.state.selectWarehouseId} updateData={this.updatePlaceId} />
+                <InventoryHeadTable />
              </div>
+
         );
     }
 }
