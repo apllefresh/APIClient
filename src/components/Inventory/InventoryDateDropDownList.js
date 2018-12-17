@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Select from 'react-select'
 import 'react-dropdown/style.css'
 
-export class WarehouseDropDownList extends Component {
+export class InventoryDateDropDownList extends Component {
      constructor(props) {
         super(props);
         this.state = {
@@ -17,7 +17,7 @@ export class WarehouseDropDownList extends Component {
         }
          componentDidMount()
          {
-             var data =[{label: 1,value: 1},{label: 2,value: 2},{label: 3,value: 3}];
+             var data =[{label: "2018-01-01",value: 1},{label: "2018-02-02",value: 2},{label: "2018-03-03",value: 3}];
                this.setState({Options: data,Loading: false});
 
          }

@@ -36,7 +36,6 @@ export class PlaceDropDownList extends Component {
                         data.push(this.state.AllOptions[i]);
                     }
                 }
-               console.log(nextProps.WareHouseId);
                this.setState({Options: data,Loading: false});
               return true;
          }
