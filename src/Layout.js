@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Col, Grid, Row } from 'react-bootstrap';
-import { NavMenu } from './components/NavMenu';
-import { Footer } from './components/Footer';
-import './Layout.css';
+import { NavMenu } from './NavMenu';
 
 export class Layout extends Component {
   displayName = Layout.name
@@ -11,15 +9,12 @@ export class Layout extends Component {
     return (
       <Grid fluid>
         <Row>
-          <Col sm={1}>
+          <Col sm={3}>
             <NavMenu />
           </Col>
-          <Col id="body" sm={12}>
+          <Col id="body" sm={9}>
             {this.props.children}
           </Col>
-        </Row>
-        <Row>
-          <Footer/>
         </Row>
       </Grid>
     );
