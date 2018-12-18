@@ -78,7 +78,6 @@ export class InventoryHeadTable extends Component {
                  <Button onClick={() => this.deleteAct(row.Id)}>
                      <Glyphicon glyph="trash" />
                  </Button>
-                 
              </ButtonGroup>
          </ButtonToolbar>);
 }
