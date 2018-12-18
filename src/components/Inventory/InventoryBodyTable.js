@@ -105,7 +105,7 @@ export  class InventoryBodyTable extends React.Component {
         return (
             <CustomInsertModal  {...attr} />
         );
-    }
+    };
 
     render() {
         const options = {

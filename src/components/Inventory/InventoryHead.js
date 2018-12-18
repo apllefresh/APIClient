@@ -25,10 +25,6 @@ export class InventoryHead extends Component {
         console.log("warehouseID: " + value);
     };
 
-    updateTable() {
-
-    }
-
     render() {
 
         return (

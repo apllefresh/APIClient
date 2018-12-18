@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import {InventoryHeadDeleteModal} from './InventoryHeadDeleteModal';
 
 export class InventoryHeadTable extends Component {
     constructor(props) {

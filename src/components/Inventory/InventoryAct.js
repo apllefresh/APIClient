@@ -1,99 +1,56 @@
-import React, { Component } from 'react';
-import Select from 'react-select'
-import 'react-bootstrap-table-all.min.css'
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import { InventoryBodyTable } from './InventoryBodyTable';
+import React, {Component} from 'react';
+import {Col, Grid, Row, DropdownButton, MenuItem} from "react-bootstrap";
+import {InventoryBodyTable} from './InventoryBodyTable';
+import {InventoryDateDropDownList} from "./InventoryDateDropDownList";
+import {WarehouseDropDownList} from "./WarehouseDropDownList";
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 export class InventoryAct extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            mode: this.props.match.params.mode, id: this.props.match.params.id
-            , spaceOptions: this.getSpaceOptions(), selectSpaceId: 0
-            , tableBody: this.getTableBody()
-            , value: '', valueEan:''
+            mode: this.props.match.params.mode, id: this.props.match.params.id,
+            selectInventoryId: 0,
+            selectWarehouseId: [],
         };
-       
-
-        this.getSpaceOptions = this.getSpaceOptions.bind(this);
-        this.spaceChange = this.spaceChange.bind(this);
-
-        this.getTableBody = this.getTableBody.bind(this);
-
-        this.handleChange = this.handleChange.bind(this);
-        this.keyPress = this.keyPress.bind(this);
-    }
-
-  
-
-
-
-
-    getSpaceOptions() {
-        fetch('api/inventorySpace/')
-            .then(response => response.json())
-            .then(data =>
-            {
-                var tdata = [];
-                data.map((t, index) => tdata.push({ label: t.Name, value: t.Id }));
-                this.setState({ spaceOptions: tdata, dateLoading: false });
-            });
-    }
-    spaceChange = (v) => {
-        this.setState({ selectSpaceId: v.value });
-    }
-
-    getTableBody() {
-        if (this.props.match.params.mode !== "add") {
-            fetch('api/inventoryBody/' + this.props.match.params.id)
-                .then(response => response.json())
-                .then(data => {
-                    this.setState({ tableBody: data });
-                });
-        }
-        else {
-            this.setState({ tableBody: [] });
-        }
+        this.updateWarehouseId = this.updateWarehouseId.bind(this);
     }
 
 
-    handleChange(e) {
-        this.setState({ value: e.target.value });
-    }
-
-    keyPress(e) {
-        if (e.keyCode === 13) {
-            this.setState({ valueEan: e.target.value });
-        }
-    }
-
-    customNameField = (column, attr, editorClass, ignoreEditable) => {
-        return (
-            <input placeholder="Product EAN" className="form-control editor edit-text" value={this.state.value} onKeyDown={this.keyPress} onChange={this.handleChange}  />
-        );
-    }
-    customField = (column, attr, editorClass, ignoreEditable) => {
-        return (
-            <input disabled placeholder="Product Name" className="form-control editor edit-text" value={this.state.valueEan} />
-        );
-    }
+    updateInventoryDateId = (value) => {
+        this.setState({selectInventoryId: value});
+        console.log("selectInventoryId: " + this.state.selectInventoryId);
+    };
+    updateWarehouseId = (value) => {
+        this.setState({selectWarehouseId: value});
+        console.log("warehouseID: " + value);
+    };
 
     render() {
-       
-
         return (
-            <div>
-                { 
-                    (this.state.mode === "view") ?
-                        <Select options={this.state.spaceOptions} onChange={this.spaceChange} placeholder="Select an option" />
-                        : <p></p>
-                        }
-                        
-                
-               
-                <InventoryBodyTable data={this.state.tableBody}  > </InventoryBodyTable>
-            </div>
+            <Grid fluid style={{height: '100%', overflow: 'auto'}}>
+                <h1>Inventory act </h1>
+                <Row style={{height: '100px'}}>
+
+                    <Col xs={6} md={4}>
+                        <InventoryDateDropDownList updateData={this.updateInventoryDateId}/>
+                    </Col>
+                    <Col xs={6} md={4}>
+                        <WarehouseDropDownList updateDat={this.updateWarehouseId}/>
+                    </Col>
+                    <Col xs={6} md={4}>
+                        <DropdownButton title="Dropdown" id="bg-vertical-dropdown-2">
+                            <MenuItem eventKey="1">Dropdown link</MenuItem>
+                            <MenuItem eventKey="2">Dropdown link</MenuItem>
+                        </DropdownButton>
+                    </Col>
+                </Row>
+                <Row style={{height: '100%'}}>
+                    <InventoryBodyTable/>
+                </Row>
+            </Grid>
+
         );
     }
 }
