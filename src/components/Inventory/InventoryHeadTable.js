@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Grid} from 'react-bootstrap'
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import {InventoryHeadDeleteModal} from './InventoryHeadDeleteModal';
 
 export class InventoryHeadTable extends Component {
     constructor(props) {
         super(props);
         this.state = {
             dataOptions: [], 
-            dataLoading: true
+            dataLoading: true,
+            showModalDeleteHead: false,
+            id:0
         };
         
         this.viewAct = this.viewAct.bind(this);
         this.editAct = this.editAct.bind(this);
         this.deleteAct = this.deleteAct.bind(this);
+        this.handleCloseModalDeleteHead = this.handleCloseModalDeleteHead.bind(this);
+        this.handleShowModalDeleteHead = this.handleShowModalDeleteHead.bind(this);
     }
 
     componentDidMount() {
@@ -51,9 +56,16 @@ export class InventoryHeadTable extends Component {
         win.focus();
     }
     deleteAct(id) {
-       
+        this.setState({ showModalDeleteHead: true });
+    }
+    handleCloseModalDeleteHead() {
+        this.setState({ showModalDeleteHead: false });
     }
 
+    handleShowModalDeleteHead() {
+        this.setState({ showModalDeleteHead: true });
+    }
+    
     buttonFormatter(cell, row) {
          return (<ButtonToolbar>
              <ButtonGroup>
@@ -76,6 +88,20 @@ export class InventoryHeadTable extends Component {
 
         return (
             <div>
+                <Modal show={this.state.showModalDeleteHead} onHide={this.handleCloseModalDeleteHead}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Delete Inventory Act</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <h4>Are you sure?</h4>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={this.handleCloseModalDeleteHead}>No</Button>
+                        <Button className='btn btn-primary' onClick={this.handleCloseModalDeleteHead}>Sure</Button>
+                    </Modal.Footer>
+                </Modal>
+                
+                
                 <Button hidden={this.state.dataLoading}> Add inventory act </Button>
                 { 
                     this.state.dataLoading ?
