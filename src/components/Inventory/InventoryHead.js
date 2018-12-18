@@ -1,7 +1,8 @@
-﻿import React, { Component } from 'react';
-import { WarehouseDropDownList } from './WarehouseDropDownList';
-import { PlaceDropDownList } from './PlaceDropDownList';
-
+﻿import React, {Component} from 'react';
+import {InventoryDateDropDownList} from './InventoryDateDropDownList';
+import {WarehouseDropDownList} from './WarehouseDropDownList';
+import {InventoryHeadTable} from './InventoryHeadTable';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 export class InventoryHead extends Component {
     displayName = InventoryHead.name
@@ -9,28 +10,44 @@ export class InventoryHead extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectWarehouseId: 0,
-            selectPlaceId: 0,
+            selectInventoryId: 0,
+            selectWarehouseId: [],
         };
+        this.updateWarehouseId = this.updateWarehouseId.bind(this);
     }
 
+    updateInventoryDateId = (value) => {
+        this.setState({selectInventoryId: value});
+        console.log("selectInventoryId: " + this.state.selectInventoryId);
+    };
     updateWarehouseId = (value) => {
-        this.setState({ selectWarehouseId: value })
-        console.log("warehouseID: "  +value);
+        this.setState({selectWarehouseId: value});
+        console.log("warehouseID: " + value);
+    };
+
+    updateTable() {
+
     }
-     updatePlaceId = (value) => {
-        this.setState({ selectPlaceId: value })
-        console.log("PlaceID: "  +value);
-    }
-   
+
     render() {
-       
+
         return (
-            <div>
+            <Grid fluid style={{ height: '100%', overflow : 'auto'}}>
                 <h1>Inventory</h1>
-                <WarehouseDropDownList updateData={this.updateWarehouseId} />
-                <PlaceDropDownList WareHouseId={this.state.selectWarehouseId} updateData={this.updatePlaceId} />
-             </div>
+                <Row style={{ height: '100px'}}>
+                    
+                    <Col xs={6} md={4}>
+                        <InventoryDateDropDownList updateData={this.updateInventoryDateId}/>
+                    </Col>
+                    <Col xs={6} md={4}>
+                        <WarehouseDropDownList updateDat={this.updateWarehouseId}/>
+                    </Col>
+                </Row>
+                <Row style={{ height: '100%'}}>
+                    <InventoryHeadTable/>
+                </Row>
+            </Grid>
+
         );
     }
 }

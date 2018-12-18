@@ -1,6 +1,6 @@
-﻿import React, { Component } from 'react';
+import React, { Component } from 'react';
 import Select from 'react-select'
-import 'react-dropdown/style.css'
+import 'react-bootstrap-table-all.min.css'
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import { InventoryBodyTable } from './InventoryBodyTable';
 
