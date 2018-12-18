@@ -1,38 +1,89 @@
-import React, { Component } from 'react';
-import Select from 'react-select'
-import 'react-dropdown/style.css'
+import React, {Component} from 'react';
+import DropdownTreeSelect from 'react-dropdown-tree-select'
+import 'react-dropdown-tree-select/dist/styles.css'
+
+// component from https://github.com/dowjones/react-dropdown-tree-select
 
 export class WarehouseDropDownList extends Component {
-     constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
-            Options: [], Loading: true, selectId: 0,
+            Options: [], Loading: true, selectIds: [],
         };
 
-        this.change = this.change.bind(this);
-        }
-        
-         change = (v) => {
-        this.setState({ selectId: v.value });
-        }
-         componentDidMount()
-         {
-             var data =[{label: 1,value: 1},{label: 2,value: 2},{label: 3,value: 3}];
-               this.setState({Options: data,Loading: false});
+        this.onChange = this.onChange.bind(this);
+    }
 
-         }
-     
+    onChange(currentNode, selectedNodes) {
+        var selectedIDs = [];
+        selectedNodes.forEach((node, i) => {
+            selectedIDs.push(node.value);
+        });
+        this.state.selectIds= selectedIDs;
+    };
+
+    componentDidMount() {
+        var data = [
+            {
+                label: 'Granddad 1',
+                value: 1,
+                children: [
+                    {
+                        label: 'dad 1',
+                        value: 2,
+                        children: [
+                            {
+                                label: 'son 1',
+                                value: 3
+                            },
+                            {
+                                label: 'son 2',
+                                value: 4
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                label: 'Granddad 2',
+                value: 5,
+                children: [
+                    {
+                        label: 'dad 2',
+                        value: 6,
+                        children: [
+                            {
+                                label: 'son 3',
+                                value: 7
+                            },
+                            {
+                                label: 'son 4',
+                                value: 8
+                            }
+                        ]
+                    }
+                ]
+            }
+        ];
+        
+        this.setState({Options: data, Loading: false});
+
+    }
+
     render() {
-       
+
         return (
-             <div>
+            <div>
                 {
                     this.state.Loading
-                    ? <p><em>Loading dates...</em></p>
+                        ? <p><em>Loading dates...</em></p>
                         : <div>
-                            <Select options={this.state.Options} onChange={(e) => { this.props.updateData(e.value)}} placeholder="Select warehouse" />
+                            <DropdownTreeSelect data={this.state.Options} 
+                                                onChange={this.onChange}
+                                                placeholderText="Select warehouses..." />
                         </div>
                 }
+
             </div>
         );
     }

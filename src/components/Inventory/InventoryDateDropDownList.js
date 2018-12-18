@@ -8,13 +8,9 @@ export class InventoryDateDropDownList extends Component {
         this.state = {
             Options: [], Loading: true, selectId: 0,
         };
-
-        this.change = this.change.bind(this);
         }
         
-         change = (v) => {
-        this.setState({ selectId: v.value });
-        }
+
          componentDidMount()
          {
              var data =[{label: "2018-01-01",value: 1},{label: "2018-02-02",value: 2},{label: "2018-03-03",value: 3}];
@@ -30,7 +26,7 @@ export class InventoryDateDropDownList extends Component {
                     this.state.Loading
                     ? <p><em>Loading dates...</em></p>
                         : <div>
-                            <Select options={this.state.Options} onChange={(e) => { this.props.updateData(e.value)}} placeholder="Select warehouse" />
+                            <Select options={this.state.Options} onChange={(e) => { this.props.updateData(e.value)}} placeholder="Select inventory date" />
                         </div>
                 }
             </div>
