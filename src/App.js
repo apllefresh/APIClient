@@ -3,6 +3,7 @@ import { Route } from 'react-router';
 import { Layout } from './Layout';
 import {InventoryHead} from './components/Inventory/InventoryHead';
 import {InventoryAct} from './components/Inventory/InventoryAct';
+import {Demo} from './components/demo';
 
 export default class App extends Component {
   displayName = App.name
@@ -13,6 +14,7 @@ export default class App extends Component {
       	 <Route exact path='/' component={InventoryHead} />
          <Route path='/inventory' component={InventoryHead} />
           <Route path='/inventoryAct' component={InventoryAct} />
+          <Route path='/demo' component={Demo} />
             
       </Layout>
     );
