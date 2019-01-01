@@ -4,9 +4,10 @@ import { Layout } from './Layout';
 import {InventoryHead} from './components/Inventory/InventoryHead';
 import {InventoryAct} from './components/Inventory/InventoryAct';
 import {Warehouses} from './components/Inventory/Warehouses';
+import {Remains} from './components/Inventory/Remains';
 
 export default class App extends Component {
-  displayName = App.name
+  displayName = App.name;
 
   render() {
     return (
@@ -15,6 +16,7 @@ export default class App extends Component {
          <Route path='/inventory' component={InventoryHead} />
           <Route path='/inventoryAct' component={InventoryAct} />
           <Route path='/warehouses' component={Warehouses} />
+          <Route path='/remains' component={Remains} />
             
       </Layout>
     );
