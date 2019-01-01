@@ -6,9 +6,10 @@ import './NavMenu.css';
 import {InventoryHead} from './components/Inventory/InventoryHead';
 import {Warehouses} from './components/Inventory/Warehouses';
 import {Remains} from './components/Inventory/Remains';
+import {ReSortHead} from "./components/ManageBOL/Resort/ReSortHead";
 
 export class NavMenu extends Component {
-    displayName = NavMenu.name
+    displayName = NavMenu.name;
 
     render() {
         return (
@@ -35,6 +36,12 @@ export class NavMenu extends Component {
                     <LinkContainer to={'/remains'} Component={Remains}>
                         <NavItem>
                             <Glyphicon glyph='education' /> remains
+                        </NavItem>
+                    </LinkContainer>
+                    
+                    <LinkContainer to={'/resortHead'} Component={ReSortHead}>
+                        <NavItem>
+                            <Glyphicon glyph='education' /> resortHead
                         </NavItem>
                     </LinkContainer>
 
