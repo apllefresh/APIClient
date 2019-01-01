@@ -5,6 +5,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import './NavMenu.css';
 import {InventoryHead} from './components/Inventory/InventoryHead';
 import {Warehouses} from './components/Inventory/Warehouses';
+import {Remains} from './components/Inventory/Remains';
 
 export class NavMenu extends Component {
     displayName = NavMenu.name
@@ -29,6 +30,11 @@ export class NavMenu extends Component {
                     <LinkContainer to={'/warehouses'} Component={Warehouses}>
                         <NavItem>
                             <Glyphicon glyph='education' /> warehouses
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to={'/remains'} Component={Remains}>
+                        <NavItem>
+                            <Glyphicon glyph='education' /> remains
                         </NavItem>
                     </LinkContainer>
 
