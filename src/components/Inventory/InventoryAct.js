@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Col, Grid, Row, DropdownButton, MenuItem, Button} from "react-bootstrap";
+import {Col, Grid, Row, DropdownButton, MenuItem, Button, Modal} from "react-bootstrap";
 import {InventoryBodyTable} from './InventoryBodyTable';
 import {InventoryDateDropDownList} from "./InventoryDateDropDownList";
 import {WarehouseDropDownList} from "./WarehouseDropDownList";
@@ -13,9 +13,12 @@ export class InventoryAct extends Component {
             mode: this.props.match.params.mode, id: this.props.match.params.id,
             selectInventoryId: 0,
             selectWarehouseId: [],
-            data:[]
+            data:[],
+            showModalLoadProducts: false
         };
         this.updateWarehouseId = this.updateWarehouseId.bind(this);
+        this.handleCloseModalLoadProducts = this.handleCloseModalLoadProducts.bind(this);
+        this.openFileDialogClick = this.openFileDialogClick.bind(this);
     }
 
 
@@ -47,11 +50,34 @@ export class InventoryAct extends Component {
             {Id: 8,RowNumber:8,Ean:"4601232224505", Name : "Product 8",Count:10 }];
         this.setState({ data: tempdata});
     }
-    
+
+    handleCloseModalLoadProducts() {
+        this.setState({ showModalLoadProducts: false });
+    }
+
+    openFileDialogClick() {
+
+    }
     render() {
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
                 <h1>Inventory act </h1>
+
+                <Modal show={this.state.showModalLoadProducts} onHide={this.handleCloseModalLoadProducts}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Load inventory act data</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        
+                        <input type="file"/>
+                       
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={this.handleCloseModalLoadProducts}>Cancel</Button>
+                        <Button className='btn btn-primary' onClick={this.handleCloseModalLoadProducts}>Load</Button>
+                    </Modal.Footer>
+                </Modal>
+                
                 <Row style={{height: '100px'}}>
 
                     <Col md={4}>
@@ -67,7 +93,7 @@ export class InventoryAct extends Component {
                         </DropdownButton>
                     </Col>
                     <Col md={1} >
-                        <Button  bsStyle="primary">
+                        <Button  bsStyle="primary" onClick={() => this.setState({ showModalLoadProducts: true })}>
                             Export data from txt
                         </Button>
                     </Col>
