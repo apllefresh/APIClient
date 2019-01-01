@@ -4,6 +4,7 @@ import { Glyphicon, Nav, Navbar, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import './NavMenu.css';
 import {InventoryHead} from './components/Inventory/InventoryHead';
+import {Warehouses} from './components/Inventory/Warehouses';
 
 export class NavMenu extends Component {
     displayName = NavMenu.name
@@ -23,6 +24,11 @@ export class NavMenu extends Component {
                     <LinkContainer to={'/inventory'} Component={InventoryHead}>
                         <NavItem>
                             <Glyphicon glyph='education' /> inventory
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to={'/warehouses'} Component={Warehouses}>
+                        <NavItem>
+                            <Glyphicon glyph='education' /> warehouses
                         </NavItem>
                     </LinkContainer>
 

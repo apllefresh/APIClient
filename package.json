@@ -17,7 +17,8 @@
     "react-select": "^2.1.1",
     "react-sticky-footer": "0.1.0-rc3",
     "react-table": "^6.8.6",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "treeview-react-bootstrap": "^0.4.6"
   },
   "scripts": {
     "start": "rimraf ./build && react-scripts start",
