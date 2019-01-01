@@ -6,6 +6,7 @@ import {InventoryAct} from './components/Inventory/InventoryAct';
 import {Warehouses} from './components/Inventory/Warehouses';
 import {Remains} from './components/Inventory/Remains';
 import {ReSortHead} from "./components/ManageBOL/Resort/ReSortHead";
+import {ReSortBody} from "./components/ManageBOL/Resort/ReSortBody";
 
 export default class App extends Component {
   displayName = App.name;
@@ -19,6 +20,7 @@ export default class App extends Component {
           <Route path='/warehouses' component={Warehouses} />
           <Route path='/remains' component={Remains} />
           <Route path='/resortHead' component={ReSortHead} />
+          <Route path='/resortBody' component={ReSortBody} />
             
       </Layout>
     );
