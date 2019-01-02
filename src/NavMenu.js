@@ -7,6 +7,7 @@ import {InventoryHead} from './components/Inventory/InventoryHead';
 import {Warehouses} from './components/Inventory/Warehouses';
 import {Remains} from './components/Inventory/Remains';
 import {ReSortHead} from "./components/ManageBOL/Resort/ReSortHead";
+import {RePriceHead} from "./components/ManageBOL/RePrice/RePriceHead";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -42,6 +43,11 @@ export class NavMenu extends Component {
                     <LinkContainer to={'/resortHead'} Component={ReSortHead}>
                         <NavItem>
                             <Glyphicon glyph='education' /> resortHead
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to={'/rePriceHead'} Component={RePriceHead}>
+                        <NavItem>
+                            <Glyphicon glyph='education' /> RePriceHead
                         </NavItem>
                     </LinkContainer>
 
