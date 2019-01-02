@@ -19,6 +19,8 @@ import {InventoryDates} from "./components/Inventory/InventoryDates";
 import {InventoryResult} from "./components/Inventory/InventoryResult";
 import {AnnulmentBody} from "./components/ManageBOL/Annulment/AnnulmentBody";
 import {AnnulmentHead} from "./components/ManageBOL/Annulment/AnnulmentHead";
+import {ReturnToShipperHead} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperHead";
+import {ReturnToShipperBody} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperBody";
 
 export default class App extends Component {
     displayName = App.name;
@@ -46,7 +48,9 @@ export default class App extends Component {
                 <Route path='/InvoiceBody' component={InvoiceBody}/>
                 <Route path='/AnnulmentHead' component={AnnulmentHead}/>
                 <Route path='/AnnulmentBody' component={AnnulmentBody}/>
-
+                <Route path='/ReturnToShipperHead' component={ReturnToShipperHead}/>
+                <Route path='/ReturnToShipperBody' component={ReturnToShipperBody}/>
+                
             </Layout>
         );
     }
