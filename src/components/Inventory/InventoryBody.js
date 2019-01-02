@@ -6,7 +6,7 @@ import {WarehouseDropDownList} from "./WarehouseDropDownList";
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-export class InventoryAct extends Component {
+export class InventoryBody extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {

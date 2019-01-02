@@ -13,6 +13,7 @@ import {RequestHead} from "./components/ManageBOL/Requests/RequestHead";
 import {InvoiceHead} from "./components/ManageBOL/Invoices/InvoiceHead";
 import {InventoryDates} from "./components/Inventory/InventoryDates";
 import {InventoryResult} from "./components/Inventory/InventoryResult";
+import {AnnulmentHead} from "./components/ManageBOL/Annulment/AnnulmentHead";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -78,6 +79,11 @@ export class NavMenu extends Component {
                         <LinkContainer to={'/InvoiceHead'} Component={InvoiceHead}>
                             <NavItem>
                                 <Glyphicon glyph='education'/> Накладные
+                            </NavItem>
+                        </LinkContainer>
+                        <LinkContainer to={'/AnnulmentHead'} Component={AnnulmentHead}>
+                            <NavItem>
+                                <Glyphicon glyph='education'/> Списание
                             </NavItem>
                         </LinkContainer>
 

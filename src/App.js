@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Route} from 'react-router';
 import {Layout} from './Layout';
 import {InventoryHead} from './components/Inventory/InventoryHead';
-import {InventoryAct} from './components/Inventory/InventoryAct';
+import {InventoryBody} from './components/Inventory/InventoryBody';
 import {Warehouses} from './components/Inventory/Warehouses';
 import {Remains} from './components/Inventory/Remains';
 import {ReSortHead} from "./components/ManageBOL/Resort/ReSortHead";
@@ -17,6 +17,8 @@ import {InvoiceHead} from "./components/ManageBOL/Invoices/InvoiceHead";
 import {InvoiceBody} from "./components/ManageBOL/Invoices/InvoiceBody";
 import {InventoryDates} from "./components/Inventory/InventoryDates";
 import {InventoryResult} from "./components/Inventory/InventoryResult";
+import {AnnulmentBody} from "./components/ManageBOL/Annulment/AnnulmentBody";
+import {AnnulmentHead} from "./components/ManageBOL/Annulment/AnnulmentHead";
 
 export default class App extends Component {
     displayName = App.name;
@@ -26,7 +28,7 @@ export default class App extends Component {
             <Layout>
                 <Route exact path='/' component={InventoryHead}/>
                 <Route path='/inventory' component={InventoryHead}/>
-                <Route path='/inventoryAct' component={InventoryAct}/>
+                <Route path='/inventoryAct' component={InventoryBody}/>
                 <Route path='/warehouses' component={Warehouses}/>
                 <Route path='/remains' component={Remains}/>
                 <Route path='/InventoryDates' component={InventoryDates}/>
@@ -42,6 +44,8 @@ export default class App extends Component {
                 <Route path='/RequestBody' component={RequestBody}/>
                 <Route path='/InvoiceHead' component={InvoiceHead}/>
                 <Route path='/InvoiceBody' component={InvoiceBody}/>
+                <Route path='/AnnulmentHead' component={AnnulmentHead}/>
+                <Route path='/AnnulmentBody' component={AnnulmentBody}/>
 
             </Layout>
         );
