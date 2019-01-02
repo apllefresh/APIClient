@@ -9,6 +9,7 @@ import {Remains} from './components/Inventory/Remains';
 import {ReSortHead} from "./components/ManageBOL/Resort/ReSortHead";
 import {RePriceHead} from "./components/ManageBOL/RePrice/RePriceHead";
 import {MovingHead} from "./components/ManageBOL/Moving/MovingHead";
+import {RequestHead} from "./components/ManageBOL/Requests/RequestHead";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -54,6 +55,11 @@ export class NavMenu extends Component {
                     <LinkContainer to={'/movingHead'} Component={MovingHead}>
                         <NavItem>
                             <Glyphicon glyph='education' /> movingHead
+                        </NavItem>
+                    </LinkContainer>
+                    <LinkContainer to={'/RequestHead'} Component={RequestHead}>
+                        <NavItem>
+                            <Glyphicon glyph='education' /> RequestHead
                         </NavItem>
                     </LinkContainer>
 

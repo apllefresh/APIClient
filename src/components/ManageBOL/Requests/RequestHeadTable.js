@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
-export class RePriceHeadTable extends Component {
+export class RequestHeadTable extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,32 +28,32 @@ export class RePriceHeadTable extends Component {
              });
           */
         var data = [
-            {Id: 1, Number: 1, InventorySpaceName: "space 1", CreatedBy: "Mr Brown"},
-            {Id: 2, Number: 2, InventorySpaceName: "space 2", CreatedBy: "Mr Grey"},
-            {Id: 3, Number: 3, InventorySpaceName: "space 3", CreatedBy: "Mr White"},
-            {Id: 4, Number: 4, InventorySpaceName: "space 4", CreatedBy: "Mr Black"},
-            {Id: 5, Number: 5, InventorySpaceName: "space 5", CreatedBy: "Mr Green"},
-            {Id: 6, Number: 6, InventorySpaceName: "space 3", CreatedBy: "Mr Grey"},
-            {Id: 7, Number: 7, InventorySpaceName: "space 1", CreatedBy: "Mr Black"},
-            {Id: 8, Number: 8, InventorySpaceName: "space 3", CreatedBy: "Mr White"},
-            {Id: 9, Number: 9, InventorySpaceName: "space 4", CreatedBy: "Mr Black"},
-            {Id: 10, Number: 10, InventorySpaceName: "space 5", CreatedBy: "Mr Green"},
-            {Id: 11, Number: 11, InventorySpaceName: "space 3", CreatedBy: "Mr Grey"}];
+            {Id: 1, Number: 1, Shipper: "Mr Brown", InventorySpaceName: "space 1", Sum: "1254.05"},
+            {Id: 2, Number: 2, Shipper: "Mr Grey", InventorySpaceName: "space 2", Sum: "1254.05"},
+            {Id: 3, Number: 3, Shipper: "Mr White", InventorySpaceName: "space 3", Sum: "1254.05"},
+            {Id: 4, Number: 4, Shipper: "Mr Black", InventorySpaceName: "space 4", Sum: "1254.05"},
+            {Id: 5, Number: 5, Shipper: "Mr Green", InventorySpaceName: "space 5", Sum: "1254.05"},
+            {Id: 6, Number: 6, Shipper: "Mr Grey", InventorySpaceName: "space 3", Sum: "1254.05"},
+            {Id: 7, Number: 7, Shipper: "Mr Black", InventorySpaceName: "space 1", Sum: "1254.05"},
+            {Id: 8, Number: 8, Shipper: "Mr White", InventorySpaceName: "space 3", Sum: "1254.05"},
+            {Id: 9, Number: 9, Shipper: "Mr Black", InventorySpaceName: "space 4", Sum: "1254.05"},
+            {Id: 10, Number: 10, Shipper: "Mr Green", InventorySpaceName: "space 5", Sum: "1254.05"},
+            {Id: 11, Number: 11, Shipper: "Mr Grey", InventorySpaceName: "space 3", Sum: "1254.05"}];
         this.setState({dataOptions: data, dataLoading: false});
     }
 
     addAct() {
-        var win = window.open("/repricebody/add", '_blank');
+        var win = window.open("/requestbody/add", '_blank');
         win.focus();
     }
 
     viewAct(id) {
-        var win = window.open("/repricebody/view/" + id, '_blank');
+        var win = window.open("/requestbody/view/" + id, '_blank');
         win.focus();
     }
 
     editAct(id) {
-        var win = window.open("/repricebody/edit/" + id, '_blank');
+        var win = window.open("/requestbody/edit/" + id, '_blank');
         win.focus();
     }
 
@@ -115,9 +115,11 @@ export class RePriceHeadTable extends Component {
                         >
                             <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Shipper'>Поставщик</TableHeaderColumn>
                             <TableHeaderColumn dataField='InventorySpaceName'
-                                               width='50%'>InventorySpaceId</TableHeaderColumn>
-                            <TableHeaderColumn dataField='CreatedBy'>PersonFromWarehouseId</TableHeaderColumn>
+                                               width='50%'>Склад</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Sum'
+                                               width='150px'>Сумма</TableHeaderColumn>
 
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
                                                dataAlign='center'>Buttons</TableHeaderColumn>
