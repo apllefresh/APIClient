@@ -9,6 +9,8 @@ import {ReSortHead} from "./components/ManageBOL/Resort/ReSortHead";
 import {ReSortBody} from "./components/ManageBOL/Resort/ReSortBody";
 import {RePriceHead} from "./components/ManageBOL/RePrice/RePriceHead";
 import {RePriceBody} from "./components/ManageBOL/RePrice/RePriceBody";
+import {MovingHead} from "./components/ManageBOL/Moving/MovingHead";
+import {MovingBody} from "./components/ManageBOL/Moving/MovingBody";
 
 export default class App extends Component {
   displayName = App.name;
@@ -26,6 +28,8 @@ export default class App extends Component {
           <Route path='/resortBody' component={ReSortBody} />
           <Route path='/rePriceHead' component={RePriceHead} />
           <Route path='/rePriceBody' component={RePriceBody} />
+          <Route path='/MovingHead' component={MovingHead} />
+          <Route path='/MovingBody' component={MovingBody} />
           
       </Layout>
     );
