@@ -15,6 +15,7 @@ import {RequestHead} from "./components/ManageBOL/Requests/RequestHead";
 import {RequestBody} from "./components/ManageBOL/Requests/RequestBody";
 import {InvoiceHead} from "./components/ManageBOL/Invoices/InvoiceHead";
 import {InvoiceBody} from "./components/ManageBOL/Invoices/InvoiceBody";
+import {InventoryDates} from "./components/Inventory/InventoryDates";
 
 export default class App extends Component {
     displayName = App.name;
@@ -27,6 +28,7 @@ export default class App extends Component {
                 <Route path='/inventoryAct' component={InventoryAct}/>
                 <Route path='/warehouses' component={Warehouses}/>
                 <Route path='/remains' component={Remains}/>
+                <Route path='/InventoryDates' component={InventoryDates}/>
 
                 <Route path='/resortHead' component={ReSortHead}/>
                 <Route path='/resortBody' component={ReSortBody}/>

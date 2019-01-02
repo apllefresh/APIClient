@@ -11,6 +11,7 @@ import {RePriceHead} from "./components/ManageBOL/RePrice/RePriceHead";
 import {MovingHead} from "./components/ManageBOL/Moving/MovingHead";
 import {RequestHead} from "./components/ManageBOL/Requests/RequestHead";
 import {InvoiceHead} from "./components/ManageBOL/Invoices/InvoiceHead";
+import {InventoryDates} from "./components/Inventory/InventoryDates";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -30,6 +31,11 @@ export class NavMenu extends Component {
                         <LinkContainer to={'/inventory'} Component={InventoryHead}>
                             <NavItem>
                                 <Glyphicon glyph='education'/> Инвентаризаия
+                            </NavItem>
+                        </LinkContainer>
+                        <LinkContainer to={'/InventoryDates'} Component={InventoryDates}>
+                            <NavItem>
+                                <Glyphicon glyph='education'/> Даты инвентаризации
                             </NavItem>
                         </LinkContainer>
                         <LinkContainer to={'/warehouses'} Component={Warehouses}>
