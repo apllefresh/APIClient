@@ -1,33 +1,31 @@
 import React, {Component} from 'react';
 import {Col, Grid, Row, DropdownButton, MenuItem, Button, Modal} from "react-bootstrap";
-import {InventoryBodyTable} from './InventoryBodyTable';
-import {InventoryDateDropDownList} from "./InventoryDateDropDownList";
-import {WarehouseDropDownList} from "./WarehouseDropDownList";
+import {MovingBodyTable} from './MovingBodyTable';
+import {WarehouseDropDownList} from "../../Inventory/WarehouseDropDownList";
 import 'bootstrap/dist/css/bootstrap.css';
 
 
-export class InventoryAct extends Component {
+export class MovingBody extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
             mode: this.props.match.params.mode, id: this.props.match.params.id,
-            selectInventoryId: 0,
-            selectWarehouseId: [],
+            selectWarehouseIdFrom: [],
+            selectWarehouseIdTo: [],
             data:[],
-            showModalLoadProducts: false
         };
-        this.updateWarehouseId = this.updateWarehouseId.bind(this);
+        this.updateWarehouseIdFrom = this.updateWarehouseIdFrom.bind(this);
+        this.updateWarehouseIdTo = this.updateWarehouseIdTo.bind(this);
         this.handleCloseModalLoadProducts = this.handleCloseModalLoadProducts.bind(this);
-        this.openFileDialogClick = this.openFileDialogClick.bind(this);
     }
 
 
-    updateInventoryDateId = (value) => {
-        this.setState({selectInventoryId: value});
-        console.log("selectInventoryId: " + this.state.selectInventoryId);
+    updateWarehouseIdFrom = (value) => {
+        this.setState({selectWarehouseIdFrom: value});
+        console.log("warehouseID: " + value);
     };
-    updateWarehouseId = (value) => {
-        this.setState({selectWarehouseId: value});
+    updateWarehouseIdTo = (value) => {
+        this.setState({selectWarehouseIdTo: value});
         console.log("warehouseID: " + value);
     };
 
@@ -55,36 +53,19 @@ export class InventoryAct extends Component {
         this.setState({ showModalLoadProducts: false });
     }
 
-    openFileDialogClick() {
 
-    }
     render() {
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
-                <h1>Inventory act </h1>
+                <h1>Акт перемещения продуктов </h1>
 
-                <Modal show={this.state.showModalLoadProducts} onHide={this.handleCloseModalLoadProducts}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Load inventory act data</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        
-                        <input type="file"/>
-                       
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={this.handleCloseModalLoadProducts}>Cancel</Button>
-                        <Button className='btn btn-primary' onClick={this.handleCloseModalLoadProducts}>Load</Button>
-                    </Modal.Footer>
-                </Modal>
-                
+
                 <Row style={{height: '100px'}}>
-
-                    <Col md={4}>
-                        <InventoryDateDropDownList updateData={this.updateInventoryDateId}/>
+                    <Col xs={6} md={4}>
+                        <WarehouseDropDownList id='1' updateDate={this.updateWarehouseIdFrom}/>
                     </Col>
-                    <Col md={4}>
-                        <WarehouseDropDownList updateDat={this.updateWarehouseId}/>
+                    <Col xs={6} md={4}>
+                        <WarehouseDropDownList id='2' updateDate={this.updateWarehouseIdTo}/>
                     </Col>
                     <Col md={1} >
                         <DropdownButton title="Select Action" id="bg-vertical-dropdown-2">
@@ -99,13 +80,10 @@ export class InventoryAct extends Component {
                     </Col>
                 </Row>
                 <Row style={{height: '100%'}}>
-                    <InventoryBodyTable data={this.state.data}/>
+                    <MovingBodyTable data={this.state.data}/>
                 </Row>
             </Grid>
 
         );
     }
 }
-
-
-

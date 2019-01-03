@@ -20,8 +20,7 @@ export  class RemainsTable extends React.Component {
 
                 <Row>
                     <Col md={10}>
-                        <BootstrapTable  data={this.props.data} options={options} renderAlert={false} 
-                        >
+                        <BootstrapTable  data={this.props.data} options={options} renderAlert={false} >
                             <TableHeaderColumn dataField='Id' hidden></TableHeaderColumn>
                             <TableHeaderColumn dataField='RowNumber' width='50' headerAlign='center' dataAlign='center' >#</TableHeaderColumn>
                             <TableHeaderColumn dataField='Ean' width='200' isKey={true}  headerAlign='center' dataAlign='center'>EAN</TableHeaderColumn>
