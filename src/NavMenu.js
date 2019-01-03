@@ -30,7 +30,7 @@ export class NavMenu extends Component {
 
     render() {
         return (
-            <Navbar inverse fixedTop fluid collapseOnSelect>
+            <Navbar inverse fluid collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
                         <Link to={'/'}>ReactClient</Link>

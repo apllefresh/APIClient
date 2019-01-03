@@ -32,11 +32,11 @@ export class ReturnToShipperHeadTable extends Component {
             {Id: 2, Number: 2, Shipper: "Mr Grey", InventorySpaceName: "space 2", Sum: "1254.05", RequestId: 2},
             {Id: 3, Number: 3, Shipper: "Mr White", InventorySpaceName: "space 3", Sum: "1254.05", RequestId: 3},
             {Id: 4, Number: 4, Shipper: "Mr Black", InventorySpaceName: "space 4", Sum: "1254.05", RequestId: 4},
-            {Id: 5, Number: 5, Shipper: "Mr Green", InventorySpaceName: "space 5", Sum: "1254.05", RequestId: 5},
-            {Id: 6, Number: 6, Shipper: "Mr Grey", InventorySpaceName: "space 3", Sum: "1254.05", RequestId: 6},
-            {Id: 7, Number: 7, Shipper: "Mr Black", InventorySpaceName: "space 1", Sum: "1254.05", RequestId: 7},
-            {Id: 8, Number: 8, Shipper: "Mr White", InventorySpaceName: "space 3", Sum: "1254.05", RequestId: 8},
-            {Id: 9, Number: 9, Shipper: "Mr Black", InventorySpaceName: "space 4", Sum: "1254.05", RequestId: 9},
+            // {Id: 5, Number: 5, Shipper: "Mr Green", InventorySpaceName: "space 5", Sum: "1254.05", RequestId: 5},
+            // {Id: 6, Number: 6, Shipper: "Mr Grey", InventorySpaceName: "space 3", Sum: "1254.05", RequestId: 6},
+            // {Id: 7, Number: 7, Shipper: "Mr Black", InventorySpaceName: "space 1", Sum: "1254.05", RequestId: 7},
+            // {Id: 8, Number: 8, Shipper: "Mr White", InventorySpaceName: "space 3", Sum: "1254.05", RequestId: 8},
+            // {Id: 9, Number: 9, Shipper: "Mr Black", InventorySpaceName: "space 4", Sum: "1254.05", RequestId: 9},
             {Id: 10, Number: 10, Shipper: "Mr Green", InventorySpaceName: "space 5", Sum: "1254.05", RequestId: 10},
             {Id: 11, Number: 11, Shipper: "Mr Grey", InventorySpaceName: "space 3", Sum: "1254.05", RequestId: 11}
         ];
@@ -111,10 +111,7 @@ export class ReturnToShipperHeadTable extends Component {
                 {
                     this.state.dataLoading ?
                         <p><em>dd</em></p>
-                        : <BootstrapTable data={this.state.dataOptions} striped hover pagination
-                                          fluid
-                                          style={{height: '100%', overflow: 'auto', padding: '10px 10px 10px 10px'}}
-                        >
+                        : <BootstrapTable data={this.state.dataOptions} striped hover fluid >
                             <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
                             <TableHeaderColumn dataField='Shipper'>Поставщик</TableHeaderColumn>

@@ -104,9 +104,7 @@ export class ResortHeadTable extends Component {
                 {
                     this.state.dataLoading ?
                         <p><em>dd</em></p>
-                        : <BootstrapTable data={this.state.dataOptions}  striped hover pagination
-                                          fluid style={{ height: '100%', overflow : 'auto', padding: '10px 10px 10px 10px'}}
-                        >
+                        : <BootstrapTable data={this.state.dataOptions}  striped hover fluid >
                             <TableHeaderColumn dataField='Id' isKey hidden >Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
                             <TableHeaderColumn dataField='InventorySpaceName'  width='50%'>InventorySpaceId</TableHeaderColumn>

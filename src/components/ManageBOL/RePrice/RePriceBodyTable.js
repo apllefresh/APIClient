@@ -66,9 +66,7 @@ export class RePriceBodyTable extends React.Component {
                         <Button className="pull-right" bsStyle="success">
                             Save Changes
                         </Button>
-                        <BootstrapTable data={this.props.data} options={options} renderAlert={false} insertRow
-
-                        >
+                        <BootstrapTable data={this.props.data} options={options} renderAlert={false} insertRow >
                             <TableHeaderColumn dataField='Id' hidden></TableHeaderColumn>
                             <TableHeaderColumn dataField='RowNumber' width='50' headerAlign='center'
                                                dataAlign='center'>#</TableHeaderColumn>

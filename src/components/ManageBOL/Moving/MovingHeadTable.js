@@ -109,9 +109,7 @@ export class MovingHeadTable extends Component {
                 {
                     this.state.dataLoading ?
                         <p><em>dd</em></p>
-                        : <BootstrapTable data={this.state.dataOptions} striped hover pagination
-                                          fluid style={{height: '100%', overflow: 'auto'}}
-                        >
+                        : <BootstrapTable data={this.state.dataOptions} striped hover >
                             <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
                             <TableHeaderColumn dataField='InventorySpaceNameFrom' width='30%'>Откуда</TableHeaderColumn>

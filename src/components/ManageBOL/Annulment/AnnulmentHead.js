@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Grid, Row, Col, FormGroup, ControlLabel, Panel} from 'react-bootstrap';
+import {Grid, Row, Col, FormGroup, ControlLabel, Panel, Button} from 'react-bootstrap';
 import {WarehouseDropDownList} from "../../Inventory/WarehouseDropDownList";
 import {AnnulmentHeadTable} from "./AnnulmentHeadTable";
 import DatePicker from "react-date-picker";
+import '../../../NavMenu.css';
 
 export class AnnulmentHead extends Component {
 
@@ -24,12 +25,12 @@ export class AnnulmentHead extends Component {
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
                 <h1>Акты списания</h1>
-                <Row style={{height: '100%', padding: '10px 10px 10px 10px'}}>
+                <Row style={{height: '200px', padding: '10px 10px 10px 10px'}}>
 
                     <Col xs={6} md={4}>
                         <WarehouseDropDownList updateDate={this.updateWarehouseId}/>
                     </Col>
-                    <Col md={2}>
+                    <Col md={3}>
                         <Panel>
                             <Panel.Heading>
                                 Дата создания
@@ -56,8 +57,11 @@ export class AnnulmentHead extends Component {
                             </Panel.Body>
                         </Panel>
                     </Col>
+                    <Button hidden={this.state.dataLoading} style={{padding: '10px 10px 10px 10px'}}>
+                        Создать акт списания
+                    </Button>
                 </Row>
-                <Row style={{height: '100%'}}>
+                <Row >
                     <AnnulmentHeadTable/>
                 </Row>
             </Grid>

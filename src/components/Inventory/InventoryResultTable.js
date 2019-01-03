@@ -46,9 +46,7 @@ export class InventoryResultTable extends Component {
                 {
                     this.state.dataLoading ?
                         <p><em>dd</em></p>
-                        : <BootstrapTable data={this.state.dataOptions} striped hover pagination
-                                          fluid style={{height: '100%', overflow: 'auto'}}
-                        >
+                        : <BootstrapTable data={this.state.dataOptions} striped hover fluid  >
                             <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
                             <TableHeaderColumn dataField='ProductName' width='50%'>Наименование</TableHeaderColumn>
