@@ -71,6 +71,9 @@ export class ProductHeadTable extends Component {
     buttonFormatter(cell, row) {
         return (<ButtonToolbar>
             <ButtonGroup>
+                <Button>
+                    <Glyphicon glyph="print"/>
+                </Button>
                 <Button onClick={() => this.viewAct(row.Id)}>
                     <Glyphicon glyph="search"/>
                 </Button>
@@ -128,7 +131,7 @@ export class ProductHeadTable extends Component {
                             <TableHeaderColumn dataField='Name'>Наименование</TableHeaderColumn>
                             <TableHeaderColumn dataField='ProductGroupName'>Товарная группа</TableHeaderColumn>
 
-                            <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
+                            <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='180'
                                                dataAlign='center'>Buttons</TableHeaderColumn>
                         </BootstrapTable>
                 }
