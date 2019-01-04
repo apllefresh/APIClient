@@ -15,6 +15,8 @@ import {InventoryDates} from "./components/Inventory/InventoryDates";
 import {InventoryResult} from "./components/Inventory/InventoryResult";
 import {AnnulmentHead} from "./components/ManageBOL/Annulment/AnnulmentHead";
 import {ReturnToShipperHead} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperHead";
+import {ProductGroups} from "./components/Product/ProductGroups";
+import {Shippers} from "./components/Product/Shippers";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -22,8 +24,7 @@ export class NavMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            inventoryShow: false,
-            ManageBOLShow: false,
+            Show: 0,
         };
 
     }
@@ -39,11 +40,11 @@ export class NavMenu extends Component {
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <NavItem onClick={() => this.setState({inventoryShow: !this.state.inventoryShow})}>
+                        <NavItem onClick={() => this.setState({Show: (this.state.Show === 1 ? 0 : 1) })}>
                             <Glyphicon glyph='education'/> Инвентаризация
                         </NavItem>
                         {
-                            this.state.inventoryShow ?
+                            this.state.Show === 1 ?
                                 <div>
                                     <LinkContainer to={'/inventory'} Component={InventoryHead}>
                                         <NavItem>
@@ -73,11 +74,11 @@ export class NavMenu extends Component {
                                 </div>
                                 : <p></p>
                         }
-                        <NavItem onClick={() => this.setState({ManageBOLShow: !this.state.ManageBOLShow})}>
+                        <NavItem onClick={() => this.setState({Show: (this.state.Show === 2 ? 0 : 2)})}>
                             <Glyphicon glyph='education'/> Накладные
                         </NavItem>
                         {
-                            this.state.ManageBOLShow ?
+                            this.state.Show === 2 ?
                                 <div>
                                     <LinkContainer to={'/resortHead'} Component={ReSortHead}>
                                         <NavItem>
@@ -118,6 +119,26 @@ export class NavMenu extends Component {
                                 : <p></p>
                         }
 
+                        <NavItem onClick={() => this.setState({Show: (this.state.Show === 3 ? 0 : 3)})}>
+                            <Glyphicon glyph='education'/> Продукты
+                        </NavItem>
+                        {
+                            this.state.Show === 3 ?
+                                <div>
+                                    <LinkContainer to={'/ProductGroups'} Component={ProductGroups}>
+                                        <NavItem>
+                                            <Glyphicon glyph='education'/> Товарные группы
+                                        </NavItem>
+                                    </LinkContainer>
+                                    <LinkContainer to={'/Shippers'} Component={Shippers}>
+                                        <NavItem>
+                                            <Glyphicon glyph='education'/> Поставщики
+                                        </NavItem>
+                                    </LinkContainer>
+                                    
+                                </div>
+                                : <p></p>
+                        }
                        
 
 

@@ -3,7 +3,7 @@ import TreeView from 'treeview-react-bootstrap';
 import {Grid, Row, Col, Button, Panel, ListGroup, ListGroupItem} from "react-bootstrap";
 
 //https://www.npmjs.com/package/treeview-react-bootstrap
-export class Warehouses extends Component {
+export class ProductGroups extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,54 +15,54 @@ export class Warehouses extends Component {
     componentDidMount() {
         var data = [
             {
-                text: "Зал",
+                text: "МКО",
                 nodes: [
                     {
-                        text: "Стелаж круп",
+                        text: "Куры",
                         nodes: [
                             {
-                                text: "Полка 1"
+                                text: "Охлажденные"
                             },
                             {
-                                text: "Полка 2"
+                                text: "Замороженные"
                             }
                         ]
                     },
                     {
-                        text: "Стелаж соков",
+                        text: "Мясо",
                         nodes: [
                             {
-                                text: "Полка 1"
+                                text: "Охлажденные"
                             },
                             {
-                                text: "Полка 2"
+                                text: "Замороженные"
                             }
                         ]
                     }
                 ]
             },
             {
-                text: "Склад",
+                text: "ОФК",
                 nodes: [
                     {
-                        text: "Морозиьные камеры",
+                        text: "Овощи",
                         nodes: [
                             {
-                                text: "Камера 1"
+                                text: "Замороженные"
                             },
                             {
-                                text: "Камера 2"
+                                text: "Охлажденные"
                             }
                         ]
                     },
                     {
-                        text: "Склад муки",
+                        text: "Фрукты",
                         nodes: [
                             {
-                                text: "Полка 1"
+                                text: "Замороженные"
                             },
                             {
-                                text: "Полка 2"
+                                text: "Охлажденные"
                             }
                         ]
                     }
@@ -79,12 +79,12 @@ export class Warehouses extends Component {
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
                 <Panel>
-                    <h1>Склады </h1>
+                    <h1>Товарные группы </h1>
                     <ListGroup>
                         <ListGroupItem>
                             <Row style={{height: '70px', overflow: 'auto'}}>
-                                <Button>Добавить склад</Button>
-                                <Button>Добавить подсклад</Button>
+                                <Button>Добавить группу</Button>
+                                <Button>Добавить подгруппу</Button>
                                 <Button>Редактировать </Button>
                                 <Button>Удалить </Button>
                             </Row>

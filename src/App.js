@@ -23,8 +23,13 @@ import {AnnulmentBody} from "./components/ManageBOL/Annulment/AnnulmentBody";
 import {AnnulmentHead} from "./components/ManageBOL/Annulment/AnnulmentHead";
 import {ReturnToShipperHead} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperHead";
 import {ReturnToShipperBody} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperBody";
+
+
+
 import { registerLocale, setDefaultLocale } from "react-datepicker";
 import ru from 'date-fns/locale/ru'
+import {ProductGroups} from "./components/Product/ProductGroups";
+import {Shippers} from "./components/Product/Shippers";
 registerLocale('ru', ru);
 setDefaultLocale('ru');
 
@@ -57,6 +62,9 @@ export default class App extends Component {
                 <Route path='/AnnulmentBody' component={AnnulmentBody}/>
                 <Route path='/ReturnToShipperHead' component={ReturnToShipperHead}/>
                 <Route path='/ReturnToShipperBody' component={ReturnToShipperBody}/>
+
+                <Route path='/ProductGroups' component={ProductGroups}/>
+                <Route path='/Shippers' component={Shippers}/>
                 
             </Layout>
         );
