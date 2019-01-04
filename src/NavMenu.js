@@ -17,6 +17,7 @@ import {AnnulmentHead} from "./components/ManageBOL/Annulment/AnnulmentHead";
 import {ReturnToShipperHead} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperHead";
 import {ProductGroups} from "./components/Product/ProductGroups";
 import {Shippers} from "./components/Product/Shippers";
+import {ProductHead} from "./components/Product/ProductHead";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -135,7 +136,11 @@ export class NavMenu extends Component {
                                             <Glyphicon glyph='education'/> Поставщики
                                         </NavItem>
                                     </LinkContainer>
-                                    
+                                    <LinkContainer to={'/ProductHead'} Component={ProductHead}>
+                                        <NavItem>
+                                            <Glyphicon glyph='education'/> Товары
+                                        </NavItem>
+                                    </LinkContainer>
                                 </div>
                                 : <p></p>
                         }

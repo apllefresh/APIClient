@@ -30,6 +30,8 @@ import { registerLocale, setDefaultLocale } from "react-datepicker";
 import ru from 'date-fns/locale/ru'
 import {ProductGroups} from "./components/Product/ProductGroups";
 import {Shippers} from "./components/Product/Shippers";
+import {ProductHead} from "./components/Product/ProductHead";
+import {ProductBody} from "./components/Product/ProductBody";
 registerLocale('ru', ru);
 setDefaultLocale('ru');
 
@@ -65,6 +67,8 @@ export default class App extends Component {
 
                 <Route path='/ProductGroups' component={ProductGroups}/>
                 <Route path='/Shippers' component={Shippers}/>
+                <Route path='/ProductHead' component={ProductHead}/>
+                <Route path='/ProductBody' component={ProductBody}/>
                 
             </Layout>
         );
