@@ -32,6 +32,8 @@ import {ProductGroups} from "./components/Product/ProductGroups";
 import {Shippers} from "./components/Product/Shippers";
 import {ProductHead} from "./components/Product/ProductHead";
 import {ProductBody} from "./components/Product/ProductBody";
+import {ProductPrintTemplates} from "./components/Settings/ProductPrintTemplates";
+import {ProductPrintTemplateEditor} from "./components/Settings/ProductPrintTemplateEditor";
 registerLocale('ru', ru);
 setDefaultLocale('ru');
 
@@ -69,6 +71,8 @@ export default class App extends Component {
                 <Route path='/Shippers' component={Shippers}/>
                 <Route path='/ProductHead' component={ProductHead}/>
                 <Route path='/ProductBody' component={ProductBody}/>
+                <Route path='/ProductPrintTemplates' component={ProductPrintTemplates}/>
+                <Route path='/ProductPrintTemplateEditor' component={ProductPrintTemplateEditor}/>
                 
             </Layout>
         );

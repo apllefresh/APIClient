@@ -18,6 +18,7 @@ import {ReturnToShipperHead} from "./components/ManageBOL/ReturnToShipper/Return
 import {ProductGroups} from "./components/Product/ProductGroups";
 import {Shippers} from "./components/Product/Shippers";
 import {ProductHead} from "./components/Product/ProductHead";
+import {ProductPrintTemplates} from "./components/Settings/ProductPrintTemplates";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -139,6 +140,11 @@ export class NavMenu extends Component {
                                     <LinkContainer to={'/ProductHead'} Component={ProductHead}>
                                         <NavItem>
                                             <Glyphicon glyph='education'/> Товары
+                                        </NavItem>
+                                    </LinkContainer>
+                                    <LinkContainer to={'/ProductPrintTemplates'} Component={ProductPrintTemplates}>
+                                        <NavItem>
+                                            <Glyphicon glyph='education'/> Шаблоны ценников
                                         </NavItem>
                                     </LinkContainer>
                                 </div>

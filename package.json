@@ -4,14 +4,16 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "react": "^16.0.0",
+    "konva": "2.5.1",
+    "react": "16.6.1",
     "react-bootstrap": "^0.32.0",
     "react-bootstrap-date-picker": "^5.1.0",
     "react-bootstrap-table": "^4.3.1",
     "react-datepicker": "^2.0.0",
-    "react-dom": "^16.0.0",
+    "react-dom": "16.6.1",
     "react-dropdown": "^1.6.2",
     "react-dropdown-tree-select": "^1.14.0",
+    "react-konva": "16.6.1-1",
     "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
@@ -19,6 +21,7 @@
     "react-sticky-footer": "0.1.0-rc3",
     "react-table": "^6.8.6",
     "rimraf": "^2.6.2",
+    "storm-react-diagrams": "^5.2.1",
     "treeview-react-bootstrap": "^0.4.6"
   },
   "scripts": {

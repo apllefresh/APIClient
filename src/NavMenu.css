@@ -92,4 +92,7 @@
     .treeview {
         height: 600px;
     }
+    .konvajs-content {
+        background: lightgray;
+    }
 }
