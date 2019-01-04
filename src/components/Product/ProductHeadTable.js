@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar,FormControl, Modal, ControlLabel} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import Select from 'react-select'
+import 'react-dropdown/style.css'
 
 export class ProductHeadTable extends Component {
     constructor(props) {
@@ -9,7 +11,18 @@ export class ProductHeadTable extends Component {
             dataOptions: [],
             dataLoading: true,
             showModalDeleteHead: false,
-            id: 0
+            showModalPrint: false,
+            id: 0,
+            options: [
+                {
+                    label: "Стандарт 3х4",
+                    value: "1"
+                },
+                {
+                    label: "Большой 17х20",
+                    value: "2"
+                }
+            ],
         };
 
         this.viewAct = this.viewAct.bind(this);
@@ -17,6 +30,8 @@ export class ProductHeadTable extends Component {
         this.deleteAct = this.deleteAct.bind(this);
         this.handleCloseModalDeleteHead = this.handleCloseModalDeleteHead.bind(this);
         this.handleShowModalDeleteHead = this.handleShowModalDeleteHead.bind(this);
+        this.handleCloseModalPrint = this.handleCloseModalPrint.bind(this);
+        this.handleShowModalPrint = this.handleShowModalPrint.bind(this);
     }
 
     componentDidMount() {
@@ -67,11 +82,18 @@ export class ProductHeadTable extends Component {
     handleShowModalDeleteHead() {
         this.setState({showModalDeleteHead: true});
     }
+    handleCloseModalPrint() {
+        this.setState({showModalPrint: false});
+    }
+
+    handleShowModalPrint() {
+        this.setState({showModalPrint: true});
+    }
 
     buttonFormatter(cell, row) {
         return (<ButtonToolbar>
             <ButtonGroup>
-                <Button>
+                <Button onClick={this.handleShowModalPrint}>
                     <Glyphicon glyph="print"/>
                 </Button>
                 <Button onClick={() => this.viewAct(row.Id)}>
@@ -92,6 +114,22 @@ export class ProductHeadTable extends Component {
 
         return (
             <div>
+                <Modal show={this.state.showModalPrint} onHide={this.handleCloseModalPrint}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Печать ценников</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <ControlLabel>
+                            Выберете шаблон ценника
+                        </ControlLabel>
+                        <Select placeholder="Шаблон ценника" options={this.state.options}  />
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button onClick={this.handleCloseModalPrint}>Отмена</Button>
+                        <Button className='btn btn-primary' onClick={this.handleCloseModalPrint}>Печать</Button>
+                    </Modal.Footer>
+                </Modal>
+                
                 <Modal show={this.state.showModalDeleteHead} onHide={this.handleCloseModalDeleteHead}>
                     <Modal.Header closeButton>
                         <Modal.Title>Delete Product</Modal.Title>
