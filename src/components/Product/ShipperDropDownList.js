@@ -23,12 +23,14 @@ export class ShipperDropDownList extends Component {
     render() {
 
         return (
-            <div>
+            <div style={{ width : '300px' }}>
                 {
                     this.state.Loading
                         ? <p><em>Loading dates...</em></p>
                         : <div>
-                            <Select options={this.state.Options} onChange={(e) => {
+                            <Select 
+                                
+                                options={this.state.Options} onChange={(e) => {
                                 this.props.updateData(e.value)
                             }} placeholder="Выберете поставщика..."/>
                         </div>

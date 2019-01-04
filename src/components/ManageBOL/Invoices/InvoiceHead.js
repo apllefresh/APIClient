@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col, FormGroup, ControlLabel, Panel, Button} from 'react-bootstrap';
 import {WarehouseDropDownList} from "../../Inventory/WarehouseDropDownList";
-import DatePicker from "react-date-picker";
+import DatePicker from "react-datepicker";
 import {ShipperDropDownList} from "../../Product/ShipperDropDownList";
 import {InvoiceHeadTable} from "./InvoiceHeadTable";
 
@@ -67,7 +67,7 @@ export class InvoiceHead extends Component {
                         </Panel>
                     </Col>
                 </Row>
-                <Row style={{height: '100%'}}>
+                <Row >
                     <InvoiceHeadTable/>
                 </Row>
             </Grid>

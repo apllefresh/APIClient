@@ -65,17 +65,26 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    
+
     .container-fluid {
         display: flex;
         flex-direction: column;
-        padding-left: 0px; 
+        padding-left: 0px;
     }
+
     #body {
         max-height: calc(100vh - 100px);
         /*overflow-y: scroll;*/
     }
+
     .react-bs-container-body {
-        max-height: 500px !important;
+        max-height: 450px !important;
+    }
+
+    .row {
+        margin: 0 0 0 0;
+    }
+    .react-datepicker{
+        font-size: 14px !important;
     }
 }

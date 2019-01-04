@@ -104,7 +104,7 @@ export class RePriceHeadTable extends Component {
                 </Modal>
 
 
-                <Button hidden={this.state.dataLoading} style={{padding: '10px 10px 10px 10px'}}> Создать акт
+                <Button hidden={this.state.dataLoading} > Создать акт
                     пересорта </Button>
                 {
                     this.state.dataLoading ?

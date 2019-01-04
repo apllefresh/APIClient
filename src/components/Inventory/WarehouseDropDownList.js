@@ -73,13 +73,14 @@ export class WarehouseDropDownList extends Component {
     render() {
 
         return (
-            <div>
+            <div style={{ width : '300px' }}>
                 {
                     this.state.Loading
                         ? <p><em>Loading dates...</em></p>
                         : <div>
                             <DropdownTreeSelect data={this.state.Options} 
                                                 onChange={this.onChange}
+                                                style={{ width : '300px' }}
                                                 placeholderText="Select warehouses..." />
                         </div>
                 }

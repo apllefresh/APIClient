@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Route} from 'react-router';
+
+
 import {Layout} from './Layout';
 import {InventoryHead} from './components/Inventory/InventoryHead';
 import {InventoryBody} from './components/Inventory/InventoryBody';
@@ -21,6 +23,11 @@ import {AnnulmentBody} from "./components/ManageBOL/Annulment/AnnulmentBody";
 import {AnnulmentHead} from "./components/ManageBOL/Annulment/AnnulmentHead";
 import {ReturnToShipperHead} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperHead";
 import {ReturnToShipperBody} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperBody";
+import { registerLocale, setDefaultLocale } from "react-datepicker";
+import ru from 'date-fns/locale/ru'
+registerLocale('ru', ru);
+setDefaultLocale('ru');
+
 
 export default class App extends Component {
     displayName = App.name;

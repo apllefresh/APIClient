@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal, Row} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 export class AnnulmentHeadTable extends Component {
@@ -104,7 +104,9 @@ export class AnnulmentHeadTable extends Component {
                 </Modal>
 
 
-                
+                <Button hidden={this.state.dataLoading} style={{padding: '10px 10px 10px 10px'}}>
+                    Создать акт списания
+                </Button>
                 {
                     this.state.dataLoading ?
                         <p><em>dd</em></p>

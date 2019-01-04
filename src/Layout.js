@@ -16,7 +16,7 @@ export class Layout extends Component {
                     </header>
                     <main>
                         <Row style={{height: '100%'}}>
-                            <Col sm={2} style={{height: '100%'}}>
+                            <Col sm={2} style={{height: '100%', padding: '0px'}}>
                                 <NavMenu/>
                             </Col>
                             <Col id="body" sm={10}>

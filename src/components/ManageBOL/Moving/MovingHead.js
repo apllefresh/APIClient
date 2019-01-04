@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Grid, Row, Col, FormGroup, ControlLabel, Panel} from 'react-bootstrap';
 import {WarehouseDropDownList} from "../../Inventory/WarehouseDropDownList";
 import {MovingHeadTable} from "./MovingHeadTable";
-import DatePicker from "react-date-picker";
+import DatePicker from "react-datepicker";
 
 export class MovingHead extends Component {
 

@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import {Grid, Row, Col, FormGroup, ControlLabel, Panel, Button} from 'react-bootstrap';
 import {WarehouseDropDownList} from "../../Inventory/WarehouseDropDownList";
-import DatePicker from "react-date-picker";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import {ShipperDropDownList} from "../../Product/ShipperDropDownList";
 import {ReturnToShipperHeadTable} from "./ReturnToShipperHeadTable";
+
+
 
 export class ReturnToShipperHead extends Component {
 
@@ -12,9 +15,13 @@ export class ReturnToShipperHead extends Component {
         this.state = {
             selectWarehouseId: [],
             selectShipperId: [],
+            dateFrom: Date.now(),
+            dateTo: Date.now(),
         };
         this.updateWarehouseId = this.updateWarehouseId.bind(this);
         this.updateShipperId = this.updateShipperId.bind(this);
+        this.handleChangeDateFrom = this.handleChangeDateFrom.bind(this);
+        this.handleChangeDateTo = this.handleChangeDateTo.bind(this);
     }
 
     updateWarehouseId = (value) => {
@@ -25,22 +32,32 @@ export class ReturnToShipperHead extends Component {
         this.setState({selectShipperId: value});
         console.log("warehouseID: " + value);
     };
+    handleChangeDateTo(date) {
+        this.setState({
+            dateTo: date
+        });
+    }
+    handleChangeDateFrom(date) {
+        this.setState({
+            dateFrom: date
+        });
+    }
 
     render() {
-
+   
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
                 <h1>Возврат поставщику</h1>
                 <Row style={{height: '100%', padding: '10px 10px 10px 10px'}}>
-                    <Col md={3}>
+                    <Col sm={3}>
                         <ShipperDropDownList updateDate={this.updateShipperId}/>
                     </Col>
-                    <Col md={3}>
+                    <Col sm={2}>
                         <WarehouseDropDownList updateDate={this.updateWarehouseId}/>
                     </Col>
 
-                    <Col md={2}>
-                        <Panel>
+                    <Col sm={3}>
+                        <Panel style={{width: '250px'}}>
                             <Panel.Heading>
                                 Дата создания
                             </Panel.Heading>
@@ -51,7 +68,8 @@ export class ReturnToShipperHead extends Component {
                                             <ControlLabel>От</ControlLabel>
                                         </Col>
                                         <Col>
-                                            <DatePicker value="01/01/2019"/>
+                                            <DatePicker selected={this.state.dateFrom}
+                                                        onChange={this.handleChangeDateFrom}/>
                                         </Col>
                                     </Row>
                                     <Row>
@@ -59,7 +77,10 @@ export class ReturnToShipperHead extends Component {
                                             <ControlLabel>До</ControlLabel>
                                         </Col>
                                         <Col>
-                                            <DatePicker value="01/01/2019"/>
+                                            <DatePicker selected={this.state.dateTo}
+                                                        onChange={this.handleChangeDateTo}
+                                                        
+                                            />
                                         </Col>
                                     </Row>
                                 </Grid>
