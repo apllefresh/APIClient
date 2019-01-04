@@ -5,9 +5,10 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "react": "^16.0.0",
-    "react-bootstrap": "^0.31.5",
+    "react-bootstrap": "^0.32.0",
+    "react-bootstrap-date-picker": "^5.1.0",
     "react-bootstrap-table": "^4.3.1",
-    "react-date-picker": "^7.0.0",
+    "react-datepicker": "^2.0.0",
     "react-dom": "^16.0.0",
     "react-dropdown": "^1.6.2",
     "react-dropdown-tree-select": "^1.14.0",
@@ -19,6 +20,8 @@
     "react-table": "^6.8.6",
     "rimraf": "^2.6.2",
     "storm-react-diagrams": "^5.2.1"
+    "rimraf": "^2.6.2",
+    "treeview-react-bootstrap": "^0.4.6"
   },
   "scripts": {
     "start": "rimraf ./build && react-scripts start",

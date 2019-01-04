@@ -1,9 +1,9 @@
-﻿import React from 'react';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
-import {Button, ButtonGroup, ButtonToolbar, Col, Glyphicon, Grid, Modal, Row} from "react-bootstrap";
-import {InsertProductModal} from "./InsertProductModal";
+import React, {Component} from 'react';
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal, Grid, Row, Col} from 'react-bootstrap'
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import {InsertProductModal} from "../../Inventory/InsertProductModal";
 
-export  class InventoryBodyTable extends React.Component {
+export class AnnulmentBodyTable extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +13,7 @@ export  class InventoryBodyTable extends React.Component {
 
         this.handleCloseModalDeleteProduct = this.handleCloseModalDeleteProduct.bind(this);
     }
-    
+
     createCustomModal = (onModalClose, onSave, columns) => {
         const attr = {
             onModalClose, onSave, columns
@@ -40,14 +40,14 @@ export  class InventoryBodyTable extends React.Component {
         this.setState({ showModalDeleteProduct: false });
     }
 
-
     render() {
+
         const options = {
             insertModal: this.createCustomModal
         };
         return (
             <Grid fluid>
-                
+
                 <Modal show={this.state.showModalDeleteProduct} onHide={this.handleCloseModalDeleteProduct}>
                     <Modal.Header closeButton>
                         <Modal.Title>Delete Product from act</Modal.Title>
@@ -60,20 +60,22 @@ export  class InventoryBodyTable extends React.Component {
                         <Button className='btn btn-primary' onClick={this.handleCloseModalDeleteProduct}>Sure</Button>
                     </Modal.Footer>
                 </Modal>
-                
+
                 <Row>
                     <Col md={10}>
-                <Button className="pull-right" bsStyle="success">
-                    Save Changes
-                </Button>
-            <BootstrapTable  data={this.props.data} options={options} renderAlert={false} insertRow>
-                <TableHeaderColumn dataField='Id' hidden></TableHeaderColumn>
-                <TableHeaderColumn dataField='RowNumber' width='50' headerAlign='center' dataAlign='center' >#</TableHeaderColumn>
-                <TableHeaderColumn dataField='Ean' width='200' isKey={true}  headerAlign='center' dataAlign='center'>EAN</TableHeaderColumn>
-                <TableHeaderColumn dataField='Name'  headerAlign='center'>Name</TableHeaderColumn>
-                <TableHeaderColumn dataField='Count' width='100' headerAlign='center' dataAlign='center'>Count</TableHeaderColumn>
-                <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='100' dataAlign='center'>Buttons</TableHeaderColumn>
-            </BootstrapTable>
+                        <Button className="pull-right" bsStyle="success">
+                            Save Changes
+                        </Button>
+                        <BootstrapTable  data={this.props.data} options={options} renderAlert={false} insertRow>
+                            <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
+                            <TableHeaderColumn dataField='RowNumber' width='50' dataAlign='center'>#</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Ean' >Штрихкод</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Name' width='30%'>Наименование</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Count'>Количество</TableHeaderColumn>
+
+                            <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
+                                               dataAlign='center'>Buttons</TableHeaderColumn>
+                        </BootstrapTable>
                     </Col>
                 </Row>
             </Grid>

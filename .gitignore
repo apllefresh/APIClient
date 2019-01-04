@@ -19,3 +19,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.iml
+.idea/.idea.APIClient/.idea/encodings.xml
+.idea/.idea.APIClient/.idea/indexLayout.xml
+.idea/.idea.APIClient/.idea/contentModel.xml
+.idea/.idea.APIClient/.idea/modules.xml
+.idea/.idea.APIClient/.idea/vcs.xml
+.idea/.idea.APIClient/.idea/workspace.xml
+.idea/.idea.APIClient/.idea/misc.xml

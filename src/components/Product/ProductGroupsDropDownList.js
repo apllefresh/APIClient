@@ -4,7 +4,7 @@ import 'react-dropdown-tree-select/dist/styles.css'
 
 // component from https://github.com/dowjones/react-dropdown-tree-select
 
-export class WarehouseDropDownList extends Component {
+export class ProductGroupsDropDownList extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -65,7 +65,7 @@ export class WarehouseDropDownList extends Component {
                 ]
             }
         ];
-        
+
         this.setState({Options: data, Loading: false});
 
     }
@@ -73,15 +73,14 @@ export class WarehouseDropDownList extends Component {
     render() {
 
         return (
-            <div style={{ width : '300px' }}>
+            <div>
                 {
                     this.state.Loading
                         ? <p><em>Loading dates...</em></p>
                         : <div>
-                            <DropdownTreeSelect data={this.state.Options} 
+                            <DropdownTreeSelect data={this.state.Options}
                                                 onChange={this.onChange}
-                                                style={{ width : '300px' }}
-                                                placeholderText="Select warehouses..." />
+                                                placeholderText="Select groups..." />
                         </div>
                 }
 
