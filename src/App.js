@@ -51,7 +51,7 @@ export default class App extends Component {
     render() {
         return (
             <Layout>
-                <Route exact path='/' component={InventoryHead}/>
+                {/*<Route exact path='./ /Login.html' />*/}
                 <Route path='/inventory' component={InventoryHead}/>
                 <Route path='/inventoryAct' component={InventoryBody}/>
                 <Route path='/warehouses' component={Warehouses}/>
@@ -88,7 +88,7 @@ export default class App extends Component {
                 <Route path='/Departments' component={Departments}/>
                 <Route path='/RoleList' component={RoleList}/>
                 <Route path='/Role' component={Role}/>
-
+                
             </Layout>
         );
     }
