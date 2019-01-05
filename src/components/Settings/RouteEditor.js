@@ -2,57 +2,86 @@ import  {Component} from 'react';
 import {Grid, Row, Col, ListGroup, ListGroupItem, Button, ControlLabel, ButtonGroup, Glyphicon} from 'react-bootstrap'
 import Select from 'react-select'
 import 'react-dropdown/style.css'
-import * as SRD from "storm-react-diagrams";
+import '../../NavMenu.css';
+import {
+    DiagramEngine,
+    DiagramModel,
+    DefaultNodeModel,
+    LinkModel,
+    DiagramWidget,
+    DefaultLinkModel
+} from "storm-react-diagrams";
 import 'storm-react-diagrams/dist/style.min.css';
 import * as React from "react";
+import {RouteEditorTable} from "./RouteEditorTable";
 
 export class RouteEditor extends Component {
     constructor(props) {
         super(props);
-       
-        //1) setup the diagram engine
-        var engine = new SRD.DiagramEngine();
+
+        var engine = new DiagramEngine();
         engine.installDefaultFactories();
+        var model = new DiagramModel();
 
-        //2) setup the diagram model
-        var model = new SRD.DiagramModel();
+        var node1 = new DefaultNodeModel("Начальная точка", "rgb(192,255,0)");
+        let port1 = node1.addOutPort("Out");
+        node1.setPosition(20, 100);
 
-        //3-A) create a default node
-        var node1 = new SRD.DefaultNodeModel("Manager", "rgb(0,192,255)");
-        node1.setPosition(100, 100);
+        var node2 = new DefaultNodeModel("Менеджер", "rgb(0,192,255)");
+        let port20 = node2.addInPort("In");
+        let port21 = node2.addOutPort("Out");
+        let port22 = node2.addInPort("In");
+        let port23 = node2.addOutPort("Out");
+        node2.setPosition(200, 100);
 
-        //3-B) create another default node
-        var node2 = new SRD.DefaultNodeModel("Head Manager", "rgb(0,192,255)");
-        node2.setPosition(400, 100);
-        
+        var node3 = new DefaultNodeModel("Руководитель", "rgb(0,192,255)");
+        let port30 = node3.addInPort("In");
+        let port31 = node3.addOutPort("Out");
+        let port32 = node3.addInPort("In");
+        let port33 = node3.addOutPort("Out");
+        node3.setPosition(425, 100);
 
-       
-        //4) add the models to the root graph
-        model.addAll(node1, node2);
+        var node4 = new DefaultNodeModel("Ком. директор", "rgb(0,192,255)");
+        let port40 = node4.addInPort("In");
+        let port41 = node4.addOutPort("Out");
+        let port42 = node4.addInPort("In");
+        let port43 = node4.addOutPort("Out");
+        node4.setPosition(700, 100);
 
-        //5) load model into engine
+        var node5 = new DefaultNodeModel("Конечня точка", "rgb(192,0,255)");
+        let port5 = node5.addInPort("In");
+        node5.setPosition(900, 100);
+
+        let link1 = port1.link(port20);
+        link1.addLabel("Черновик");
+
+        let link2 = port21.link(port30);
+        link2.addLabel("На рассмотрении у руководителя");
+
+        let link3 = port31.link(port40);
+        link3.addLabel("Подтвержден руководителем");
+
+        let link4 = port41.link(port5);
+        link4.addLabel("Подтвержден");
+
+        let link5 = port33.link(port22);
+        link5.addLabel("Возвращен менеджеру");
+
+        let link6 = port43.link(port32);
+        link6.addLabel("Возвращен руководителю");
+
+        model.addAll(node1, node2,node3,node4,node5, link1, link2, link3,link4,link5,link6);
+
         engine.setDiagramModel(model);
         
         this.state = {
             statuses:[
-                { name: "Черновик " },
                 { name: "На рассмотрении у руководителя" },
                 { name: "Подтвержден руководителем " },
+                { name: "Подтвержден" },
+                { name: "Возвращен менеджеру" },
+                { name: "Возвращен руководителю" },
                 { name: "Заявка подтверждена" }
-            ],
-            statusOptions: [
-                {
-                    label: "Начальный статус",
-                    value: "1"
-                },
-                {
-                    label: "Промежуточный статус",
-                    value: "2"
-                },
-                {
-                    label: "Конечный статус",
-                    value: "3"
-                }
             ],
             routeOptions: [
                 {
@@ -84,7 +113,7 @@ export class RouteEditor extends Component {
                     value: "7"
                 }
             ],
-            engine : [],
+            engine : engine,
         };
     }
 
@@ -102,6 +131,17 @@ export class RouteEditor extends Component {
                         <Row>
                             <Select placeholder="Выбор маршрута" options={this.state.routeOptions}/>
                         </Row>
+                        
+                        <p></p>
+                        <ListGroup>
+                            <h4> Статусы</h4>
+                            {this.state.statuses.map((rect, i) => (
+                                <ListGroupItem style={{ width: '300px', display: 'inline-block'}}>
+                                    <ControlLabel> {rect.name}
+                                    </ControlLabel>
+                                </ListGroupItem>
+                            ))}
+                        </ListGroup>
                         <p></p>
                         <ButtonGroup>
                             <Button>
@@ -114,25 +154,13 @@ export class RouteEditor extends Component {
                                 <Glyphicon glyph="trash"/>
                             </Button>
                         </ButtonGroup>
-                        <p></p>
-                        <ListGroup>
-                            {this.state.statuses.map((rect, i) => (
-                                <ListGroupItem style={{ width: '300px', display: 'inline-block'}}>
-                                    <ControlLabel> {rect.name}
-                                    </ControlLabel>
-                                    <Select placeholder="назначение статуса" options={this.state.statusOptions}/>
-                                </ListGroupItem>
-                            ))}
-                        </ListGroup>
                     </Col>
                     <Col sm={8}>
-                        <Row>
-                            <div style={{BackgroundColor :"Black"}} >
-                                <SRD.DiagramWidget position='unset' className="srd-demo-canvas" diagramEngine={this.state.engine}/>
-                            </div>
+                        <Row style={{ height: '350px' }}>
+                                <DiagramWidget className="srd-demo-canvas" diagramEngine={this.state.engine} />
                         </Row>
                         <Row>
-                            
+                            <RouteEditorTable/>
                         </Row>
                     </Col>
                 </Row>
