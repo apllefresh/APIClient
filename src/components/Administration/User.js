@@ -53,6 +53,21 @@ export class User extends Component {
                                 placeholder="Введите имя"
                             />
                             <p></p>
+                            <ControlLabel>Логин</ControlLabel>
+                            <FormControl
+                                type="text"
+                                placeholder="Введите логин"
+                            />
+                            <p></p>
+                            <ControlLabel>Пароль</ControlLabel>
+                            <FormControl
+                                type="password"
+                                placeholder="******"
+                            />
+                            <Button>
+                               Задать пароль
+                            </Button>
+                            <p></p>
                             <ControlLabel>
                                 Отдел
                             </ControlLabel>

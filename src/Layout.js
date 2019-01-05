@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Col, Grid, Row} from 'react-bootstrap';
+import {Col, ControlLabel, Grid, Row} from 'react-bootstrap';
 import {NavMenu} from './NavMenu';
+//import logo from 'src/img/github.png'
 
 export class Layout extends Component {
     displayName = Layout.name;
@@ -11,8 +12,46 @@ export class Layout extends Component {
                 <Grid fluid>
 
                     <header
-                        style={{height: '50px', width: '100%', backgroundColor: 'DarkGray'}}>
-
+                        style={{height: '50px', width: '100%', backgroundColor: '#333', display:'inline-block'}}>
+                        {/*<a href='/Login.html' >link to test.html</a>*/}
+                       
+                            <div className="container-fluid">
+                                <div className="navbar-header">
+                                    <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                        <span className="sr-only">Toggle navigation</span>
+                                        <span className="icon-bar"></span>
+                                        <span className="icon-bar"></span>
+                                        <span className="icon-bar"></span>
+                                    </button>
+                                    <a style={{color: 'darkgrey', padding:'15px 15px 15px 15px'  }} className="navbar-brand" href="#">My Retail</a>
+                                {/*</div>*/}
+                                {/*<div className="navbar-collapse collapse">*/}
+                                    <ul className="nav navbar-nav navbar-right">
+                                        <li>
+                                            <ControlLabel style={{color: 'darkgrey', padding:'15px 15px 15px 15px'  }}>
+                                                Алексеев К.Ю.
+                                            </ControlLabel>
+                                        </li>
+                                        <li>
+                                            <ControlLabel style={{color: 'darkgrey', padding:'15px 15px 15px 15px'  }}>
+                                                Отдел: РКП
+                                            </ControlLabel>
+                                        </li>
+                                        <li>
+                                            <ControlLabel style={{color: 'darkgrey', padding:'15px 15px 15px 15px'  }}>
+                                                Менеджер
+                                            </ControlLabel>
+                                        </li>
+                                        <li><a style={{color: 'darkgrey', fontWeight: 'bold', padding:'15px 15px 15px 15px'  }} href="#">Помощь</a></li>
+                                        <li><a style={{color: 'darkgrey', fontWeight: 'bold', padding:'15px 15px 15px 15px'  }} href='/Login.html'>Выйти</a></li>
+                                    </ul>
+                                    <form className="navbar-form navbar-right">
+                                        <input type="text" className="form-control" placeholder="Поиск по сайту..."/>
+                                    </form>
+                                </div>
+                            </div>
+                        
                     </header>
                     <main>
                         <Row style={{height: '100%'}}>
@@ -31,14 +70,21 @@ export class Layout extends Component {
                 <Grid fluid>
 
                     <footer className="navbar-fixed-bottom"
-                            style={{height: '50px', width: '100%', backgroundColor: 'DarkGray'}}>
+                            style={{height: '50px', width: '100%', backgroundColor: '#333'}}>
                         <div>
-                            <a href="https://coreui.io">CoreUI</a>
-                            <span>&copy; 2018 creativeLabs.</span>
-                        </div>
-                        <div className="ml-auto">
-                            <span>Powered by</span>
-                            <a href="https://coreui.io">CoreUI</a>
+                           
+                            <div class="footer-copyright text-center py-3"
+                                 style={{color: 'darkgrey', padding:'15px 15px 15px 15px'  }}>
+                                <a href="https://github.com/apllefresh" style={{ color: 'darkgrey',fontWeight: 'bold' ,paddingRight:'10px'}} >applefresh</a>
+                                
+                                
+                                <img src={require('./img/github.png')} alt="github" className="brand-logo"
+                                     height='30px' width='30px' />
+                                
+                                <ControlLabel  style={{ color: 'darkgrey' ,paddingLeft:'10px'}} > 2019 Copyright ©
+                                </ControlLabel>
+                            </div>
+                           
                         </div>
                     </footer>
                 </Grid>
