@@ -19,6 +19,8 @@ import {Shippers} from "./components/Product/Shippers";
 import {ProductHead} from "./components/Product/ProductHead";
 import {ProductPrintTemplates} from "./components/Settings/ProductPrintTemplates";
 import {RouteEditor} from "./components/Settings/RouteEditor";
+import {UserList} from "./components/Administration/UserList";
+import {Departments} from "./components/Administration/Departments";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -160,6 +162,25 @@ export class NavMenu extends Component {
                                 : <p></p>
                         }
 
+                        <NavItem onClick={() => this.setState({Show: (this.state.Show === 5 ? 0 : 5)})}>
+                            <Glyphicon glyph='education'/> Администрирование
+                        </NavItem>
+                        {
+                            this.state.Show === 5 ?
+                                <div>
+                                    <LinkContainer to={'/UserList'} Component={UserList}>
+                                        <NavItem>
+                                            <Glyphicon glyph='education'/> Пользователи
+                                        </NavItem>
+                                    </LinkContainer>
+                                    <LinkContainer to={'/Departments'} Component={Departments}>
+                                        <NavItem>
+                                            <Glyphicon glyph='education'/> Отделы
+                                        </NavItem>
+                                    </LinkContainer>
+                                </div>
+                                : <p></p>
+                        }
 
                     </Nav>
                 </Navbar.Collapse>

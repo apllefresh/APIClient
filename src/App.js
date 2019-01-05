@@ -7,6 +7,9 @@ import {InventoryHead} from './components/Inventory/InventoryHead';
 import {InventoryBody} from './components/Inventory/InventoryBody';
 import {Warehouses} from './components/Inventory/Warehouses';
 import {Remains} from './components/Inventory/Remains';
+import {InventoryDates} from "./components/Inventory/InventoryDates";
+import {InventoryResult} from "./components/Inventory/InventoryResult";
+
 import {ReSortHead} from "./components/ManageBOL/Resort/ReSortHead";
 import {ReSortBody} from "./components/ManageBOL/Resort/ReSortBody";
 import {RePriceHead} from "./components/ManageBOL/RePrice/RePriceHead";
@@ -17,8 +20,6 @@ import {RequestHead} from "./components/ManageBOL/Requests/RequestHead";
 import {RequestBody} from "./components/ManageBOL/Requests/RequestBody";
 import {InvoiceHead} from "./components/ManageBOL/Invoices/InvoiceHead";
 import {InvoiceBody} from "./components/ManageBOL/Invoices/InvoiceBody";
-import {InventoryDates} from "./components/Inventory/InventoryDates";
-import {InventoryResult} from "./components/Inventory/InventoryResult";
 import {AnnulmentBody} from "./components/ManageBOL/Annulment/AnnulmentBody";
 import {AnnulmentHead} from "./components/ManageBOL/Annulment/AnnulmentHead";
 import {ReturnToShipperHead} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperHead";
@@ -34,6 +35,9 @@ import {ProductBody} from "./components/Product/ProductBody";
 import {ProductPrintTemplates} from "./components/Settings/ProductPrintTemplates";
 import {ProductPrintTemplateEditor} from "./components/Settings/ProductPrintTemplateEditor";
 import {RouteEditor} from "./components/Settings/RouteEditor";
+import {UserList} from "./components/Administration/UserList";
+import {User} from "./components/Administration/User";
+import {Departments} from "./components/Administration/Departments";
 
 registerLocale('ru', ru);
 setDefaultLocale('ru');
@@ -73,10 +77,13 @@ export default class App extends Component {
                 <Route path='/ProductHead' component={ProductHead}/>
                 <Route path='/ProductBody' component={ProductBody}/>
 
-
                 <Route path='/ProductPrintTemplates' component={ProductPrintTemplates}/>
                 <Route path='/ProductPrintTemplateEditor' component={ProductPrintTemplateEditor}/>
                 <Route path='/RouteEditor' component={RouteEditor}/>
+
+                <Route path='/UserList' component={UserList}/>
+                <Route path='/User' component={User}/>
+                <Route path='/Departments' component={Departments}/>
 
             </Layout>
         );
