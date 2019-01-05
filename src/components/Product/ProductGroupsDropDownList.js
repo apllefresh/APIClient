@@ -25,19 +25,35 @@ export class ProductGroupsDropDownList extends Component {
     componentDidMount() {
         var data = [
             {
-                label: 'Granddad 1',
+                label: 'МКО',
                 value: 1,
                 children: [
                     {
-                        label: 'dad 1',
+                        label: 'СВИНИНА П/Т ',
                         value: 2,
                         children: [
                             {
-                                label: 'son 1',
+                                label: 'ПЕЛЬМЕНИ, ШТ           ',
                                 value: 3
                             },
                             {
-                                label: 'son 2',
+                                label: 'КАРТОФЕЛЬ-ФРИ, ШТ        ',
+                                value: 31
+                            },
+                            {
+                                label: 'ЗРАЗЫ, ШТ                ',
+                                value: 32
+                            },
+                            {
+                                label: 'ЗАМОРОЖ.ГРИБЫ, ШТ        ',
+                                value: 33
+                            },
+                            {
+                                label: 'БИФШТЕКСЫ, ШТ            ',
+                                value: 34
+                            },
+                            {
+                                label: 'КОТЛЕТЫ, ШТ              ',
                                 value: 4
                             }
                         ]
@@ -45,7 +61,7 @@ export class ProductGroupsDropDownList extends Component {
                 ]
             },
             {
-                label: 'Granddad 2',
+                label: 'ГСТ',
                 value: 5,
                 children: [
                     {
@@ -80,7 +96,8 @@ export class ProductGroupsDropDownList extends Component {
                         : <div>
                             <DropdownTreeSelect data={this.state.Options}
                                                 onChange={this.onChange}
-                                                placeholderText="Select groups..." />
+                                                style={{width:'400px'}}
+                                                placeholderText="Товарная группа" />
                         </div>
                 }
 

@@ -52,10 +52,10 @@ export default class App extends Component {
         return (
             <Layout>
                 {/*<Route exact path='./ /Login.html' />*/}
-                <Route path='/inventory' component={InventoryHead}/>
-                <Route path='/inventoryAct' component={InventoryBody}/>
-                <Route path='/warehouses' component={Warehouses}/>
-                <Route path='/remains' component={Remains}/>
+                <Route path='/InventoryHead' component={InventoryHead}/>
+                <Route path='/InventoryBody' component={InventoryBody}/>
+                <Route path='/Warehouses' component={Warehouses}/>
+                <Route path='/Remains' component={Remains}/>
                 <Route path='/InventoryDates' component={InventoryDates}/>
                 <Route path='/InventoryResult' component={InventoryResult}/>
 

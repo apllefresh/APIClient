@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import React, {Component} from 'react';
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal, Col} from 'react-bootstrap'
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 export class InventoryHeadTable extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataOptions: [], 
+            dataOptions: [],
             dataLoading: true,
             showModalDeleteHead: false,
-            id:0
+            id: 0
         };
-        
+
         this.viewAct = this.viewAct.bind(this);
         this.editAct = this.editAct.bind(this);
         this.deleteAct = this.deleteAct.bind(this);
@@ -20,98 +20,138 @@ export class InventoryHeadTable extends Component {
     }
 
     componentDidMount() {
-       /*
-        fetch('api/inventoryDate/')
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ dateOptions: data, dateLoading: false });
-            });
-         */
-         var data = [{Id: 1,Number:1,InventorySpaceName:"space 1", CreatedBy : "Mr Brown" },
-                     {Id: 2,Number:2,InventorySpaceName:"space 2", CreatedBy : "Mr Grey" },
-                     {Id: 3,Number:3,InventorySpaceName:"space 3", CreatedBy : "Mr White" },
-                     {Id: 4,Number:4,InventorySpaceName:"space 4", CreatedBy : "Mr Black" },
-                     {Id: 5,Number:5,InventorySpaceName:"space 5", CreatedBy : "Mr Green" },
-                     {Id: 6,Number:6,InventorySpaceName:"space 3", CreatedBy : "Mr Grey" },
-                     {Id: 7,Number:7,InventorySpaceName:"space 1", CreatedBy : "Mr Black" },
-                     {Id: 8,Number:8,InventorySpaceName:"space 3", CreatedBy : "Mr White" },
-                     {Id: 9,Number:9,InventorySpaceName:"space 4", CreatedBy : "Mr Black" },
-                     {Id: 10,Number:10,InventorySpaceName:"space 5", CreatedBy : "Mr Green" },
-                     {Id: 11,Number:11,InventorySpaceName:"space 3", CreatedBy : "Mr Grey" }]
-        this.setState({ dataOptions: data, dataLoading: false });
+        /*
+         fetch('api/inventoryDate/')
+             .then(response => response.json())
+             .then(data => {
+                 this.setState({ dateOptions: data, dateLoading: false });
+             });
+          */
+        var data = [
+                {Id: 1, Number: 1, InventorySpaceName: "ШАЛАНДА П/Ф", CreatedBy: "Медведева А. А."},
+                {Id: 2, Number: 2, InventorySpaceName: "КОНТЕЙНЕР №20", CreatedBy: "Артюшина М. Г."},
+                {Id: 3, Number: 3, InventorySpaceName: "КАМЕРА №14", CreatedBy: "Тюрина Ю. Н."},
+                {Id: 4, Number: 4, InventorySpaceName: "ЗАЛ САХАР ВЕС,КРУПА ВЕС", CreatedBy: "Белокрылова Е. А."},
+                {Id: 5, Number: 5, InventorySpaceName: "ЗАЛ КАШИ Б/П", CreatedBy: "Кожевникова Н. С."},
+                {Id: 6, Number: 6, InventorySpaceName: "ЗАЛ СТЕЛЛАЖ МАСЛО РАСТ+МУКА ", CreatedBy: "Зельская Г. И."},
+                {Id: 7, Number: 7, InventorySpaceName: "ЗАЛ СТЕЛЛАЖ СУПЫ Б/П+СЕНСОИ", CreatedBy: "Иванова Е. К."},
+                {Id: 8, Number: 8, InventorySpaceName: "ЗАЛ СТОЙКА ШОКОЛАДА", CreatedBy: "Левченкова Я. В."},
+                {Id: 9, Number: 9, InventorySpaceName: "ЗАЛ СУХИЕ ТОРТЫ", CreatedBy: "Короташ И. В."},
+                {Id: 10, Number: 10, InventorySpaceName: "ЗАЛ ВОСТОЧКА", CreatedBy: "Измайлова Е. А."},
+                {Id: 11, Number: 11, InventorySpaceName: "ЗАЛ КОНФЕТЫ ВЕС", CreatedBy: "Бабко Т. А."},
+                {
+                    Id: 12,
+                    Number: 12,
+                    InventorySpaceName: "ЗАЛ СТЕЛЛАЖ КОНФЕТЫ КОРОБКИ + АДМИНИСТРАТОРСКАЯ ПАКЕТЫ ",
+                    CreatedBy: "Иванова Д. А."
+                },
+                {Id: 13, Number: 13, InventorySpaceName: "ЗАЛ ПЕЧЕНЬЕ ШТ+СТОЙКИ", CreatedBy: "Кулаева А. А."},
+                {Id: 14, Number: 14, InventorySpaceName: "ЗАЛ: СТЕЛЛАЖ С ГИГИЕНОЙ", CreatedBy: "Заикина Т. А."},
+                {Id: 15, Number: 15, InventorySpaceName: "ЗАЛ: СТЕЛЛАЖ  С МЫЛОМ", CreatedBy: "Галлямов А. Ф."},
+                {Id: 16, Number: 16, InventorySpaceName: "РАСПРОДАЖНЫЕ СТОЛЫ", CreatedBy: "Максимова Е. С."}
+
+            ]
+        ;
+        this.setState({dataOptions: data, dataLoading: false});
     }
-   
+
     addAct() {
-        var win = window.open("/inventoryAct/add", '_blank');
+        var win = window.open("/InventoryBody/add", '_blank');
         win.focus();
     }
-    viewAct(id)
-    {
-        var win = window.open("/inventoryAct/view/"+id, '_blank');
+
+    viewAct(id) {
+        var win = window.open("/InventoryBody/view/" + id, '_blank');
         win.focus();
     }
+
     editAct(id) {
-        var win = window.open("/inventoryAct/edit/"+id, '_blank');
+        var win = window.open("/InventoryBody/edit/" + id, '_blank');
         win.focus();
     }
+
     deleteAct(id) {
-        this.setState({ showModalDeleteHead: true });
+        this.setState({showModalDeleteHead: true});
     }
+
     handleCloseModalDeleteHead() {
-        this.setState({ showModalDeleteHead: false });
+        this.setState({showModalDeleteHead: false});
     }
 
     handleShowModalDeleteHead() {
-        this.setState({ showModalDeleteHead: true });
+        this.setState({showModalDeleteHead: true});
     }
-    
+
     buttonFormatter(cell, row) {
-         return (<ButtonToolbar>
-             <ButtonGroup>
-                 <Button onClick={()=>this.viewAct(row.Id)}>
-                     <Glyphicon glyph="search" />
-                 </Button>
-                 <Button onClick={()=>this.editAct(row.Id)}>
-                     <Glyphicon glyph="pencil" />
-                 </Button>
-                 <Button onClick={() => this.deleteAct(row.Id)}>
-                     <Glyphicon glyph="trash" />
-                 </Button>
-             </ButtonGroup>
-         </ButtonToolbar>);
-}
-    
+        return (<ButtonToolbar>
+            <ButtonGroup>
+                <Button onClick={() => this.viewAct(row.Id)}>
+                    <Glyphicon glyph="search"/>
+                </Button>
+                <Button onClick={() => this.editAct(row.Id)}>
+                    <Glyphicon glyph="pencil"/>
+                </Button>
+                <Button onClick={() => this.deleteAct(row.Id)}>
+                    <Glyphicon glyph="trash"/>
+                </Button>
+            </ButtonGroup>
+        </ButtonToolbar>);
+    }
+
     render() {
-       
+
 
         return (
             <div>
                 <Modal show={this.state.showModalDeleteHead} onHide={this.handleCloseModalDeleteHead}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Delete Inventory Act</Modal.Title>
+                        <Modal.Title>Удаление акта инвентаризации</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <h4>Are you sure?</h4>
+                        <h4>Удалить акт инвентаризации #1 ?</h4>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.handleCloseModalDeleteHead}>No</Button>
-                        <Button className='btn btn-primary' onClick={this.handleCloseModalDeleteHead}>Sure</Button>
+                        <Button onClick={this.handleCloseModalDeleteHead}>Отмена</Button>
+                        <Button className='btn btn-primary' onClick={this.handleCloseModalDeleteHead}>Удалить</Button>
                     </Modal.Footer>
                 </Modal>
-                
-                
-                <Button hidden={this.state.dataLoading}> Add inventory act </Button>
-                { 
+
+
+                <div className="react-bs-table-tool-bar ">
+                    <div className="row">
+
+                        <div className="col-xs-6 col-sm-6 col-md-6 col-lg-8">
+
+                            <div className="btn-group btn-group-sm" role="group" hidden={this.state.dataLoading}>
+                                <button type="button" className="btn btn-info react-bs-table-add-btn ">
+                                    <span>
+                                        <i className="fa glyphicon glyphicon-plus fa-plus"> </i> 
+                                        Создать акт инвентаризации
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {
+
                     this.state.dataLoading ?
                         <p><em>dd</em></p>
-                        : <BootstrapTable data={this.state.dataOptions}  striped hover fluid >
-                            <TableHeaderColumn dataField='Id' isKey hidden >Product ID</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
-                            <TableHeaderColumn dataField='InventorySpaceName'  width='50%'>InventorySpaceId</TableHeaderColumn>
-                            <TableHeaderColumn dataField='CreatedBy'>PersonFromWarehouseId</TableHeaderColumn>
-                            
-                            <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135' dataAlign='center'>Buttons</TableHeaderColumn>
-                        </BootstrapTable>
+                        :
+                        <Col md={10}>
+                            <BootstrapTable data={this.state.dataOptions} striped hover fluid>
+                                <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
+                                <TableHeaderColumn dataField='Number' width='50'
+                                                   dataAlign='center'>#</TableHeaderColumn>
+                                <TableHeaderColumn dataField='InventorySpaceName' headerAlign='center' width='50%'>Участок
+                                    подсчета</TableHeaderColumn>
+                                <TableHeaderColumn dataField='CreatedBy' headerAlign='center'>Создан</TableHeaderColumn>
+
+                                <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}
+                                                   width='135'
+                                                   dataAlign='center'>Действия</TableHeaderColumn>
+                            </BootstrapTable>
+                        </Col>
                 }
 
             </div>

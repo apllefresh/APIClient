@@ -80,8 +80,7 @@ export class WarehouseDropDownList extends Component {
                         : <div>
                             <DropdownTreeSelect data={this.state.Options} 
                                                 onChange={this.onChange}
-                                                style={{ width : '300px' }}
-                                                placeholderText="Select warehouses..." />
+                                                placeholderText="Выберите склад" />
                         </div>
                 }
 

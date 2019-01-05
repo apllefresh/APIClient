@@ -26,7 +26,7 @@ export class InventoryDateDropDownList extends Component {
                     this.state.Loading
                     ? <p><em>Loading dates...</em></p>
                         : <div>
-                            <Select options={this.state.Options} onChange={(e) => { this.props.updateData(e.value)}} placeholder="Select inventory date" />
+                            <Select options={this.state.Options} onChange={(e) => { this.props.updateData(e.value)}} placeholder="Выберите дату инвентаризации" />
                         </div>
                 }
             </div>

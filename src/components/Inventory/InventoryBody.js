@@ -58,40 +58,38 @@ export class InventoryBody extends Component {
     render() {
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
-                <h1>Inventory act </h1>
+                <h1>Акт инвентаризации </h1>
 
                 <Modal show={this.state.showModalLoadProducts} onHide={this.handleCloseModalLoadProducts}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Load inventory act data</Modal.Title>
+                        <Modal.Title>Загрузить данные со сканера</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        
                         <input type="file"/>
-                       
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.handleCloseModalLoadProducts}>Cancel</Button>
-                        <Button className='btn btn-primary' onClick={this.handleCloseModalLoadProducts}>Load</Button>
+                        <Button onClick={this.handleCloseModalLoadProducts}>Отмена</Button>
+                        <Button className='btn btn-primary' onClick={this.handleCloseModalLoadProducts}>Загрузить</Button>
                     </Modal.Footer>
                 </Modal>
                 
                 <Row style={{height: '100px'}}>
 
-                    <Col md={4}>
+                    <Col md={3}>
                         <InventoryDateDropDownList updateData={this.updateInventoryDateId}/>
                     </Col>
-                    <Col md={4}>
+                    <Col md={3}>
                         <WarehouseDropDownList updateDat={this.updateWarehouseId}/>
                     </Col>
-                    <Col md={1} >
-                        <DropdownButton title="Select Action" id="bg-vertical-dropdown-2">
-                            <MenuItem eventKey="1">Accept</MenuItem>
-                            <MenuItem eventKey="2">Revert</MenuItem>
+                    <Col md={2} >
+                        <DropdownButton title="Выбрать действие" id="bg-vertical-dropdown-2">
+                            <MenuItem eventKey="1">Подтвердить</MenuItem>
+                            <MenuItem eventKey="2">Отклонить</MenuItem>
                         </DropdownButton>
                     </Col>
                     <Col md={1} >
                         <Button  bsStyle="primary" onClick={() => this.setState({ showModalLoadProducts: true })}>
-                            Export data from txt
+                            Загрузить данные со сканера
                         </Button>
                     </Col>
                 </Row>

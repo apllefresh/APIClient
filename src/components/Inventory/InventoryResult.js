@@ -36,7 +36,8 @@ export class InventoryResult extends Component {
 
         return (
             <Grid fluid style={{ height: '100%', overflow : 'auto'}}>
-                <h1>Inventory</h1>
+                <h1>Результаты инвентаризации</h1>
+                <p></p>
                 <Row style={{ height: '100px'}}>
 
                     <Col xs={6} md={4}>
