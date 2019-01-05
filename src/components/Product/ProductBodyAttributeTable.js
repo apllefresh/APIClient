@@ -1,6 +1,6 @@
 import React from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import {Button, Col, Grid, Row} from "react-bootstrap";
+import { Col, Grid, Row} from "react-bootstrap";
 
 export class ProductBodyAttributeTable extends React.Component {
     constructor(props) {

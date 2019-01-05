@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar,FormControl, Modal, ControlLabel} from 'react-bootstrap'
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import Select from 'react-select'
-import 'react-dropdown/style.css'
 
 export class RouteEditorTable extends Component {
     constructor(props) {

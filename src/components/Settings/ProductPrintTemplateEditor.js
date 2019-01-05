@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import {Stage, Layer, Rect, Text, Transformer, ColoredRect} from 'react-konva';
-//import backgroundImage from '../../img/background.png';
-import Konva from 'konva';
+import {Stage, Layer, Rect, Text, Transformer} from 'react-konva';
 import {
     Col,
     Grid,

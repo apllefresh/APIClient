@@ -4,19 +4,17 @@ export class InsertProductRePriceModal extends React.Component {
 
 
     handleSaveBtnClick = () => {
-        const {columns, onSave, onModalClose} = this.props;
+        const {columns,  onModalClose} = this.props;
         const newRow = {};
         columns.forEach((column, i) => {
             console.log(this.refs[column.field].value);
             newRow[column.field] = this.refs[column.field].value;
         }, this);
-        // You should call onSave function and give the new row
-        onSave(newRow);
         onModalClose();
     };
 
     keyPress = (e) => {
-        const {columns, onSave} = this.props;
+        const {columns} = this.props;
         if (e.keyCode === 13) {
             fetch('http://localhost:10220/api/ProductSearchByEan/' + e.target.value)
                 .then(response => response.json())

@@ -16,7 +16,7 @@ export class InsertProductReturnToShipperModal extends React.Component {
     };
 
     keyPress=(e)=> {
-        const { columns, onSave } = this.props;
+        const { columns } = this.props;
         if (e.keyCode === 13) {
             fetch('http://localhost:10220/api/ProductSearchByEan/' + e.target.value)
                 .then(response => response.json())

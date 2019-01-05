@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Grid, Row, Col, FormGroup, ControlLabel, Panel} from 'react-bootstrap';
+import {Grid, Row, Col} from 'react-bootstrap';
 import {ProductPrintTemplatesTable} from "./ProductPrintTemplatesTable";
 import {ProductGroupsDropDownList} from "../Product/ProductGroupsDropDownList";
 

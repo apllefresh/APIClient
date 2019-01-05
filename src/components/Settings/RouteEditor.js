@@ -7,9 +7,7 @@ import {
     DiagramEngine,
     DiagramModel,
     DefaultNodeModel,
-    LinkModel,
     DiagramWidget,
-    DefaultLinkModel
 } from "storm-react-diagrams";
 import 'storm-react-diagrams/dist/style.min.css';
 import * as React from "react";

@@ -19,7 +19,7 @@ export class WarehouseDropDownList extends Component {
         selectedNodes.forEach((node, i) => {
             selectedIDs.push(node.value);
         });
-        this.state.selectIds= selectedIDs;
+        this.setState({ selectIds: selectedIDs});
     };
 
     componentDidMount() {

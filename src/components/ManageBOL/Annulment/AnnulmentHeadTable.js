@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal, Row} from 'react-bootstrap'
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 export class AnnulmentHeadTable extends Component {

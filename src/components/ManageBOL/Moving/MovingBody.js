@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Col, Grid, Row, DropdownButton, MenuItem, Button, Modal} from "react-bootstrap";
+import {Col, Grid, Row, DropdownButton, MenuItem, Button} from "react-bootstrap";
 import {MovingBodyTable} from './MovingBodyTable';
 import {WarehouseDropDownList} from "../../Inventory/WarehouseDropDownList";
 import 'bootstrap/dist/css/bootstrap.css';

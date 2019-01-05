@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import TreeView from 'treeview-react-bootstrap';
-import {Grid, Row, Col, Button, Panel, ListGroup, ListGroupItem} from "react-bootstrap";
+import {Grid, Row, Button, Panel, ListGroup, ListGroupItem} from "react-bootstrap";
 
 //https://www.npmjs.com/package/treeview-react-bootstrap
 export class Warehouses extends Component {

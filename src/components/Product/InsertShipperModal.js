@@ -1,5 +1,4 @@
 import React from "react";
-import {Checkbox} from "react-bootstrap";
 
 export class InsertShipperModal extends React.Component {
     constructor(props) {
