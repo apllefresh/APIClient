@@ -19,6 +19,7 @@ import {ProductGroups} from "./components/Product/ProductGroups";
 import {Shippers} from "./components/Product/Shippers";
 import {ProductHead} from "./components/Product/ProductHead";
 import {ProductPrintTemplates} from "./components/Settings/ProductPrintTemplates";
+import {RouteEditor} from "./components/Settings/RouteEditor";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -34,12 +35,7 @@ export class NavMenu extends Component {
     render() {
         return (
             <Navbar inverse fluid collapseOnSelect>
-                <Navbar.Header>
-                    <Navbar.Brand>
-                        <Link to={'/'}>ReactClient</Link>
-                    </Navbar.Brand>
-                    <Navbar.Toggle/>
-                </Navbar.Header>
+               
                 <Navbar.Collapse>
                     <Nav>
                         <NavItem onClick={() => this.setState({Show: (this.state.Show === 1 ? 0 : 1) })}>
@@ -142,15 +138,28 @@ export class NavMenu extends Component {
                                             <Glyphicon glyph='education'/> Товары
                                         </NavItem>
                                     </LinkContainer>
+                                </div>
+                                : <p></p>
+                        }
+                        <NavItem onClick={() => this.setState({Show: (this.state.Show === 4 ? 0 : 4)})}>
+                            <Glyphicon glyph='education'/> Настройки
+                        </NavItem>
+                        {
+                            this.state.Show === 4 ?
+                                <div>
                                     <LinkContainer to={'/ProductPrintTemplates'} Component={ProductPrintTemplates}>
                                         <NavItem>
                                             <Glyphicon glyph='education'/> Шаблоны ценников
                                         </NavItem>
                                     </LinkContainer>
+                                    <LinkContainer to={'/RouteEditor'} Component={RouteEditor}>
+                                        <NavItem>
+                                            <Glyphicon glyph='education'/> Маршруты
+                                        </NavItem>
+                                    </LinkContainer>
                                 </div>
                                 : <p></p>
                         }
-                       
 
 
                     </Nav>

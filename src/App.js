@@ -25,8 +25,7 @@ import {ReturnToShipperHead} from "./components/ManageBOL/ReturnToShipper/Return
 import {ReturnToShipperBody} from "./components/ManageBOL/ReturnToShipper/ReturnToShipperBody";
 
 
-
-import { registerLocale, setDefaultLocale } from "react-datepicker";
+import {registerLocale, setDefaultLocale} from "react-datepicker";
 import ru from 'date-fns/locale/ru'
 import {ProductGroups} from "./components/Product/ProductGroups";
 import {Shippers} from "./components/Product/Shippers";
@@ -34,6 +33,8 @@ import {ProductHead} from "./components/Product/ProductHead";
 import {ProductBody} from "./components/Product/ProductBody";
 import {ProductPrintTemplates} from "./components/Settings/ProductPrintTemplates";
 import {ProductPrintTemplateEditor} from "./components/Settings/ProductPrintTemplateEditor";
+import {RouteEditor} from "./components/Settings/RouteEditor";
+
 registerLocale('ru', ru);
 setDefaultLocale('ru');
 
@@ -71,9 +72,12 @@ export default class App extends Component {
                 <Route path='/Shippers' component={Shippers}/>
                 <Route path='/ProductHead' component={ProductHead}/>
                 <Route path='/ProductBody' component={ProductBody}/>
+
+
                 <Route path='/ProductPrintTemplates' component={ProductPrintTemplates}/>
                 <Route path='/ProductPrintTemplateEditor' component={ProductPrintTemplateEditor}/>
-                
+                <Route path='/RouteEditor' component={RouteEditor}/>
+
             </Layout>
         );
     }
