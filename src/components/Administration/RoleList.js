@@ -10,7 +10,7 @@ import {
 } from 'react-bootstrap';
 import {BootstrapTable, TableHeaderColumn} from "react-bootstrap-table";
 
-export class UserList extends Component {
+export class RoleList extends Component {
 
     constructor(props) {
         super(props);
@@ -32,35 +32,26 @@ export class UserList extends Component {
              });
           */
         var data = [
-            {Id: 1, Name: "Петров В.И.", Department: "МКО", Role: "Менеджер"},
-            {Id: 2, Name: "Сабянин И.Г.", Department: "МКО", Role: "Руководитель"},
-            {Id: 3, Name: "Чернышева Т.И.", Department: "РКП", Role: "Руководитель"},
-            {Id: 4, Name: "Петька И.О.", Department: "ГСТ", Role: "Менеджер"},
-            {Id: 5, Name: "Чапаев В.И.", Department: "ОСТ", Role: "Менеджер"},
-            {Id: 6, Name: "Ульянов В.И.", Department: "ВВО", Role: "Руководитель"},
-            {Id: 7, Name: "Лето Дж.", Department: "РКП", Role: "Менеджер"},
-            {Id: 8, Name: "Мураками Х.", Department: "ГСТ", Role: "Руководитель"},
-            {Id: 9, Name: "Саркисян Д.Л.", Department: "ГСТ", Role: "Менеджер"},
-            {Id: 10, Name: "Шарко А.Н.", Department: "ПВО", Role: "Менеджер"},
-            {Id: 11, Name: "Приходько А.Л.", Department: "ОФК", Role: "Руководитель"},
-            {Id: 12, Name: "Бочкарева Л.С.", Department: "ОФК", Role: "Менеджер"},
-            {Id: 13, Name: "Игнатьев И.Р.", Department: "КНД", Role: "Менеджер"}
+            {Id: 1, Name: "Менеджер"},
+            {Id: 2, Name: "Руководитель"},
+            {Id: 3, Name: "Комерческий директор"},
+            {Id: 4, Name: "Администратор"}
         ];
         this.setState({dataOptions: data, dataLoading: false});
     }
 
     addAct() {
-        var win = window.open("/user/add", '_blank');
+        var win = window.open("/Role/add", '_blank');
         win.focus();
     }
 
     viewAct(id) {
-        var win = window.open("/user/view/" + id, '_blank');
+        var win = window.open("/Role/view/" + id, '_blank');
         win.focus();
     }
 
     editAct(id) {
-        var win = window.open("/user/edit/" + id, '_blank');
+        var win = window.open("/Role/edit/" + id, '_blank');
         win.focus();
     }
 
@@ -91,14 +82,14 @@ export class UserList extends Component {
             </ButtonGroup>
         </ButtonToolbar>);
     }
-    
+
     render() {
 
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
                 <h1>Пользователи</h1>
                 <p></p>
-                <Row >
+                <Row style={{ width:'500px'}}>
                     <Modal show={this.state.showModalDeleteHead} onHide={this.handleCloseModalDeleteHead}>
                         <Modal.Header closeButton>
                             <Modal.Title>Delete Inventory Act</Modal.Title>
@@ -122,7 +113,7 @@ export class UserList extends Component {
                                     <button type="button" onClick={this.addAct} className="btn btn-info react-bs-table-add-btn ">
                                     <span>
                                         <i className="fa glyphicon glyphicon-plus fa-plus"> </i> 
-                                        Добавить нового пользователя
+                                        Добавить роль
                                     </span>
                                     </button>
                                 </div>
@@ -132,11 +123,9 @@ export class UserList extends Component {
                     {
                         this.state.dataLoading ?
                             <p><em>dd</em></p>
-                            : <BootstrapTable id="users-table" data={this.state.dataOptions} striped hover fluid>
-                                <TableHeaderColumn dataField='Id' width='50px' isKey >ID</TableHeaderColumn>
-                                <TableHeaderColumn dataField='Name' width='50%'>Имя</TableHeaderColumn>
-                                <TableHeaderColumn dataField='Department' >Отдел</TableHeaderColumn>
-                                <TableHeaderColumn dataField='Role' >Роль</TableHeaderColumn>
+                            : <BootstrapTable  data={this.state.dataOptions}    >
+                                <TableHeaderColumn dataField='Id' hidden isKey >ID</TableHeaderColumn>
+                                <TableHeaderColumn dataField='Name' headerAlign='center' >Имя</TableHeaderColumn>
                                 <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
                                                    dataAlign='center'>Действия</TableHeaderColumn>
                             </BootstrapTable>

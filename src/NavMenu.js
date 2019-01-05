@@ -21,6 +21,7 @@ import {ProductPrintTemplates} from "./components/Settings/ProductPrintTemplates
 import {RouteEditor} from "./components/Settings/RouteEditor";
 import {UserList} from "./components/Administration/UserList";
 import {Departments} from "./components/Administration/Departments";
+import {RoleList} from "./components/Administration/RoleList";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -44,7 +45,7 @@ export class NavMenu extends Component {
                         </NavItem>
                         {
                             this.state.Show === 1 ?
-                                <div>
+                                <div style={{paddingLeft:'30px'}}>
                                     <LinkContainer to={'/inventory'} Component={InventoryHead}>
                                         <NavItem>
                                             <Glyphicon glyph='education'/> Акты инвентаризации
@@ -78,7 +79,7 @@ export class NavMenu extends Component {
                         </NavItem>
                         {
                             this.state.Show === 2 ?
-                                <div>
+                                <div style={{paddingLeft:'30px'}}>
                                     <LinkContainer to={'/resortHead'} Component={ReSortHead}>
                                         <NavItem>
                                             <Glyphicon glyph='education'/> Пересорт
@@ -123,7 +124,7 @@ export class NavMenu extends Component {
                         </NavItem>
                         {
                             this.state.Show === 3 ?
-                                <div>
+                                <div style={{paddingLeft:'30px'}}>
                                     <LinkContainer to={'/ProductGroups'} Component={ProductGroups}>
                                         <NavItem>
                                             <Glyphicon glyph='education'/> Товарные группы
@@ -147,7 +148,7 @@ export class NavMenu extends Component {
                         </NavItem>
                         {
                             this.state.Show === 4 ?
-                                <div>
+                                <div style={{paddingLeft:'30px'}}>
                                     <LinkContainer to={'/ProductPrintTemplates'} Component={ProductPrintTemplates}>
                                         <NavItem>
                                             <Glyphicon glyph='education'/> Шаблоны ценников
@@ -167,10 +168,15 @@ export class NavMenu extends Component {
                         </NavItem>
                         {
                             this.state.Show === 5 ?
-                                <div>
+                                <div style={{paddingLeft:'30px'}}>
                                     <LinkContainer to={'/UserList'} Component={UserList}>
                                         <NavItem>
                                             <Glyphicon glyph='education'/> Пользователи
+                                        </NavItem>
+                                    </LinkContainer>
+                                    <LinkContainer to={'/RoleList'} Component={RoleList}>
+                                        <NavItem>
+                                            <Glyphicon glyph='education'/> Роли
                                         </NavItem>
                                     </LinkContainer>
                                     <LinkContainer to={'/Departments'} Component={Departments}>

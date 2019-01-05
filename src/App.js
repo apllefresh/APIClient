@@ -38,6 +38,8 @@ import {RouteEditor} from "./components/Settings/RouteEditor";
 import {UserList} from "./components/Administration/UserList";
 import {User} from "./components/Administration/User";
 import {Departments} from "./components/Administration/Departments";
+import {RoleList} from "./components/Administration/RoleList";
+import {Role} from "./components/Administration/Role";
 
 registerLocale('ru', ru);
 setDefaultLocale('ru');
@@ -84,6 +86,8 @@ export default class App extends Component {
                 <Route path='/UserList' component={UserList}/>
                 <Route path='/User' component={User}/>
                 <Route path='/Departments' component={Departments}/>
+                <Route path='/RoleList' component={RoleList}/>
+                <Route path='/Role' component={Role}/>
 
             </Layout>
         );
