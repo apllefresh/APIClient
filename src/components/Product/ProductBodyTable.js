@@ -20,9 +20,10 @@ export class ProductBodyTable extends React.Component {
              });
           */
         var data = [
-            {Id: 1, Property: "Штрихкод", Value: "456124545"},
-            {Id: 2, Property: "Наименоание", Value: "Печенька"},
-            {Id: 3, Property: "Товарная группа", Value: "Кондитерские изделия"}
+            {Id: 1, Property: "Штрихкод", Value: "1600000259768"},
+            {Id: 2, Property: "Наименоание", Value: "ТОРТ \"МЕДОВИК\" 0.6ГР"},
+            {Id: 3, Property: "Товарная группа", Value: "ТОРТЫ"},
+            {Id: 4, Property: "Цена", Value: "338.90"}
         ];
         this.setState({data: data});
     }
@@ -36,7 +37,7 @@ export class ProductBodyTable extends React.Component {
                 <Row>
                     <Col md={12}>
                         <Button className="pull-right" bsStyle="success">
-                            Save Changes
+                            Сохранить
                         </Button>
                         <BootstrapTable data={this.state.data}  renderAlert={false}>
                             <TableHeaderColumn dataField='Id' hidden></TableHeaderColumn>

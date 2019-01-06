@@ -18,9 +18,9 @@ export class ProductBody extends Component {
         return (
             <Grid fluid style={{height: '850px', overflow: 'auto'}}>
                 <h1>Товар </h1>
-
+                <p></p>
                
-                <Row style={{height: '200px', width: '100%'}}>
+                <Row style={{height: '300px', width: '100%'}}>
                     <ProductBodyTable />
                 </Row>
                 <p></p>

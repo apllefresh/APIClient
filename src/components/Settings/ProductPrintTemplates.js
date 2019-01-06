@@ -22,7 +22,8 @@ export class ProductPrintTemplates extends Component {
 
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
-                <h1>Товары</h1>
+                <h1>Шаблоны ценников</h1>
+                <p></p>
                 <Row style={{height: '100%', padding: '10px 10px 10px 10px'}}>
 
                     <Col md={2}>

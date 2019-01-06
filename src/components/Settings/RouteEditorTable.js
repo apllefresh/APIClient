@@ -110,12 +110,12 @@ export class RouteEditorTable extends Component {
                         : <BootstrapTable data={this.state.dataOptions} striped hover fluid insertRow>
                             <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Node1'>От кого</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Status'>Статус</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Node2'>Кому</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Node1' headerAlign='center'>От кого</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Status' headerAlign='center'>Статус</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Node2' headerAlign='center' >Кому</TableHeaderColumn>
 
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='100'
-                                               dataAlign='center'>Buttons</TableHeaderColumn>
+                                               dataAlign='center'>Действия</TableHeaderColumn>
                         </BootstrapTable>
                 }
 

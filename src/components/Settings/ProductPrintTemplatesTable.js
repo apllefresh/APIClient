@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal, Col} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import 'react-dropdown/style.css'
 
@@ -29,16 +29,17 @@ export class ProductPrintTemplatesTable extends Component {
              });
           */
         var data = [
-            {Id: 1, Number: 1, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Рыба"},
-            {Id: 2, Number: 2, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Мясо"},
-            {Id: 3, Number: 3, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Рыба"},
-            {Id: 4, Number: 4, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Мясо"},
-            {Id: 5, Number: 5, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Рыба"},
-            {Id: 6, Number: 6, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Мясо"},
-            {Id: 7, Number: 7, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Рыба"},
-            {Id: 8, Number: 8, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Мясо"},
-            {Id: 9, Number: 9, EAN: "space 1", Name: "Mr Brown", ProductGroupName: "Рыба"}
-        ];
+                {Id: 1, Number: 1, Name: "Торты мал. 6х9", ProductGroupName: "Торты"},
+                {Id: 2, Number: 2, Name: "Торты бол. 10х17", ProductGroupName: "Торты"},
+                {Id: 3, Number: 3, Name: "Колбасы вес 6х9", ProductGroupName: "Колбасы"},
+                {Id: 4, Number: 4, Name: "Крупы вес бол 22х30", ProductGroupName: "Крупы"},
+                {Id: 5, Number: 5, Name: "Рыба вес мал 6х9", ProductGroupName: "Рыба"},
+                {Id: 6, Number: 6, Name: "Разрубка охл 10х17", ProductGroupName: "Мясо"},
+                {Id: 7, Number: 7, Name: "Грибы заморож мал 6х9", ProductGroupName: "Заморорзка"},
+                {Id: 8, Number: 8, Name: "Овощи заморож. вес мал 6х9", ProductGroupName: "Заморорзка"},
+                {Id: 9, Number: 9, Name: "Овощи заморож. вес бол 10х17", ProductGroupName: "Заморорзка"}
+            ]
+        ;
         this.setState({dataOptions: data, dataLoading: false});
     }
 
@@ -122,16 +123,21 @@ export class ProductPrintTemplatesTable extends Component {
                 {
                     this.state.dataLoading ?
                         <p><em>dd</em></p>
-                        : <BootstrapTable data={this.state.dataOptions} striped hover fluid>
-                            <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Name' >Наименование</TableHeaderColumn>
-                            <TableHeaderColumn dataField='ProductGroupName' width='30%'>Товарная группа</TableHeaderColumn>
-                            
+                        :
+                        <Col md={10}>
+                            <BootstrapTable data={this.state.dataOptions} striped hover fluid>
+                                <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
+                                <TableHeaderColumn dataField='Number' width='50'
+                                                   dataAlign='center'>#</TableHeaderColumn>
+                                <TableHeaderColumn dataField='Name' headerAlign='center'>Имя</TableHeaderColumn>
+                                <TableHeaderColumn dataField='ProductGroupName' width='200' headerAlign='center'>Товарная
+                                    группа</TableHeaderColumn>
 
-                            <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
-                                               dataAlign='center'>Buttons</TableHeaderColumn>
-                        </BootstrapTable>
+                                <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}
+                                                   width='135'
+                                                   dataAlign='center'>Действия</TableHeaderColumn>
+                            </BootstrapTable>
+                        </Col>
                 }
 
             </div>

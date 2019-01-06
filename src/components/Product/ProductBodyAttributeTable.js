@@ -20,9 +20,12 @@ export class ProductBodyAttributeTable extends React.Component {
              });
           */
         var data = [
-            {Id: 1, Property: "Штрихкод", Value: "456124545"},
-            {Id: 2, Property: "Наименоание", Value: "Печенька"},
-            {Id: 3, Property: "Товарная группа", Value: "Кондитерские изделия"}
+            {Id: 1, Property: "Нетто", Value: ""},
+            {Id: 2, Property: "Состав", Value: ""},
+            {Id: 3, Property: "БЖУ", Value: " "},
+            {Id: 4, Property: "Дата изготовления", Value: " "},
+            {Id: 5, Property: "Срок годности", Value: " "},
+            {Id: 6, Property: "Производитель", Value: " "},
         ];
         this.setState({data: data});
     }

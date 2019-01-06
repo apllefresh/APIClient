@@ -6,7 +6,7 @@ import {
     Button,
     ButtonToolbar,
     ButtonGroup,
-    Glyphicon
+    Glyphicon, Col
 } from 'react-bootstrap';
 import {BootstrapTable, TableHeaderColumn} from "react-bootstrap-table";
 
@@ -91,14 +91,14 @@ export class UserList extends Component {
             </ButtonGroup>
         </ButtonToolbar>);
     }
-    
+
     render() {
 
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
                 <h1>Пользователи</h1>
                 <p></p>
-                <Row >
+                <Row>
                     <Modal show={this.state.showModalDeleteHead} onHide={this.handleCloseModalDeleteHead}>
                         <Modal.Header closeButton>
                             <Modal.Title>Delete Inventory Act</Modal.Title>
@@ -119,7 +119,8 @@ export class UserList extends Component {
                             <div className="col-xs-6 col-sm-6 col-md-6 col-lg-8">
 
                                 <div className="btn-group btn-group-sm" role="group" hidden={this.state.dataLoading}>
-                                    <button type="button" onClick={this.addAct} className="btn btn-info react-bs-table-add-btn ">
+                                    <button type="button" onClick={this.addAct}
+                                            className="btn btn-info react-bs-table-add-btn ">
                                     <span>
                                         <i className="fa glyphicon glyphicon-plus fa-plus"> </i> 
                                         Добавить нового пользователя
@@ -132,14 +133,20 @@ export class UserList extends Component {
                     {
                         this.state.dataLoading ?
                             <p><em>dd</em></p>
-                            : <BootstrapTable id="users-table" data={this.state.dataOptions} striped hover fluid>
-                                <TableHeaderColumn dataField='Id' width='50px' isKey >ID</TableHeaderColumn>
-                                <TableHeaderColumn dataField='Name' width='50%'>Имя</TableHeaderColumn>
-                                <TableHeaderColumn dataField='Department' >Отдел</TableHeaderColumn>
-                                <TableHeaderColumn dataField='Role' >Роль</TableHeaderColumn>
-                                <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
-                                                   dataAlign='center'>Действия</TableHeaderColumn>
-                            </BootstrapTable>
+                            :
+                            <Col md={10}>
+                                <BootstrapTable id="users-table" data={this.state.dataOptions} striped hover fluid>
+                                    <TableHeaderColumn dataField='Id' width='50px' isKey>ID</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='Name' width='50%'
+                                                       headerAlign='center'>Имя</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='Department'
+                                                       headerAlign='center'>Отдел</TableHeaderColumn>
+                                    <TableHeaderColumn dataField='Role' headerAlign='center'>Роль</TableHeaderColumn>
+                                    <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}
+                                                       width='135'
+                                                       dataAlign='center'>Действия</TableHeaderColumn>
+                                </BootstrapTable>
+                            </Col>
                     }
 
                 </Row>
