@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal, Col} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 export class RealizChartTable extends Component {
