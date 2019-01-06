@@ -1,5 +1,5 @@
 ﻿import React, {Component} from 'react';
-import {Glyphicon, Nav, Navbar, NavItem} from 'react-bootstrap';
+import { Nav, Navbar, NavItem} from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import './NavMenu.css';
 import {InventoryHead} from './components/Inventory/InventoryHead';

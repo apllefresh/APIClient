@@ -26,18 +26,18 @@ export class AnnulmentHead extends Component {
                 <h1>Акты списания</h1>
                 <Row style={{height: '200px', padding: '10px 10px 10px 10px'}}>
 
-                    <Col xs={6} md={4}>
+                    <Col md={2}>
                         <WarehouseDropDownList updateDate={this.updateWarehouseId}/>
                     </Col>
                     <Col md={3}>
-                        <Panel>
+                        <Panel style={{width: '250px'}}>
                             <Panel.Heading>
                                 Дата создания
                             </Panel.Heading>
                             <Panel.Body>
                                 <Grid fluid>
                                     <Row>
-                                        <FormGroup style={{width: '300px'}}>
+                                        <FormGroup >
                                             <Col>
                                                 <ControlLabel style={{paddingRight:'10px'}}>От</ControlLabel>
                                                 <DatePicker value="01/01/2019"/>

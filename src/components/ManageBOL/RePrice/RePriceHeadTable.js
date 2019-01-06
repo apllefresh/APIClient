@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal} from 'react-bootstrap'
+import {Button, Glyphicon, ButtonGroup, ButtonToolbar, Modal, Col} from 'react-bootstrap'
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 export class RePriceHeadTable extends Component {
@@ -28,17 +28,28 @@ export class RePriceHeadTable extends Component {
              });
           */
         var data = [
-            {Id: 1, Number: 1, InventorySpaceName: "space 1", CreatedBy: "Mr Brown"},
-            {Id: 2, Number: 2, InventorySpaceName: "space 2", CreatedBy: "Mr Grey"},
-            {Id: 3, Number: 3, InventorySpaceName: "space 3", CreatedBy: "Mr White"},
-            {Id: 4, Number: 4, InventorySpaceName: "space 4", CreatedBy: "Mr Black"},
-            {Id: 5, Number: 5, InventorySpaceName: "space 5", CreatedBy: "Mr Green"},
-            {Id: 6, Number: 6, InventorySpaceName: "space 3", CreatedBy: "Mr Grey"},
-            {Id: 7, Number: 7, InventorySpaceName: "space 1", CreatedBy: "Mr Black"},
-            {Id: 8, Number: 8, InventorySpaceName: "space 3", CreatedBy: "Mr White"},
-            {Id: 9, Number: 9, InventorySpaceName: "space 4", CreatedBy: "Mr Black"},
-            {Id: 10, Number: 10, InventorySpaceName: "space 5", CreatedBy: "Mr Green"},
-            {Id: 11, Number: 11, InventorySpaceName: "space 3", CreatedBy: "Mr Grey"}];
+            {Id: 1, Number: 1, InventorySpaceName: "ШАЛАНДА П/Ф", CreatedBy: "Медведева А. А."},
+            {Id: 2, Number: 2, InventorySpaceName: "КОНТЕЙНЕР №20", CreatedBy: "Артюшина М. Г."},
+            {Id: 3, Number: 3, InventorySpaceName: "КАМЕРА №14", CreatedBy: "Тюрина Ю. Н."},
+            {Id: 4, Number: 4, InventorySpaceName: "ЗАЛ САХАР ВЕС,КРУПА ВЕС", CreatedBy: "Белокрылова Е. А."},
+            {Id: 5, Number: 5, InventorySpaceName: "ЗАЛ КАШИ Б/П", CreatedBy: "Кожевникова Н. С."},
+            {Id: 6, Number: 6, InventorySpaceName: "ЗАЛ СТЕЛЛАЖ МАСЛО РАСТ+МУКА ", CreatedBy: "Зельская Г. И."},
+            {Id: 7, Number: 7, InventorySpaceName: "ЗАЛ СТЕЛЛАЖ СУПЫ Б/П+СЕНСОИ", CreatedBy: "Иванова Е. К."},
+            {Id: 8, Number: 8, InventorySpaceName: "ЗАЛ СТОЙКА ШОКОЛАДА", CreatedBy: "Левченкова Я. В."},
+            {Id: 9, Number: 9, InventorySpaceName: "ЗАЛ СУХИЕ ТОРТЫ", CreatedBy: "Короташ И. В."},
+            {Id: 10, Number: 10, InventorySpaceName: "ЗАЛ ВОСТОЧКА", CreatedBy: "Измайлова Е. А."},
+            {Id: 11, Number: 11, InventorySpaceName: "ЗАЛ КОНФЕТЫ ВЕС", CreatedBy: "Бабко Т. А."},
+            {
+                Id: 12,
+                Number: 12,
+                InventorySpaceName: "ЗАЛ СТЕЛЛАЖ КОНФЕТЫ КОРОБКИ + АДМИНИСТРАТОРСКАЯ ПАКЕТЫ ",
+                CreatedBy: "Иванова Д. А."
+            },
+            {Id: 13, Number: 13, InventorySpaceName: "ЗАЛ ПЕЧЕНЬЕ ШТ+СТОЙКИ", CreatedBy: "Кулаева А. А."},
+            {Id: 14, Number: 14, InventorySpaceName: "ЗАЛ: СТЕЛЛАЖ С ГИГИЕНОЙ", CreatedBy: "Заикина Т. А."},
+            {Id: 15, Number: 15, InventorySpaceName: "ЗАЛ: СТЕЛЛАЖ  С МЫЛОМ", CreatedBy: "Галлямов А. Ф."},
+            {Id: 16, Number: 16, InventorySpaceName: "РАСПРОДАЖНЫЕ СТОЛЫ", CreatedBy: "Максимова Е. С."}
+        ];
         this.setState({dataOptions: data, dataLoading: false});
     }
 
@@ -129,16 +140,21 @@ export class RePriceHeadTable extends Component {
                 {
                     this.state.dataLoading ?
                         <p><em>dd</em></p>
-                        : <BootstrapTable data={this.state.dataOptions} striped hover fluid >
-                            <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
-                            <TableHeaderColumn dataField='InventorySpaceName'
-                                               width='50%'>InventorySpaceId</TableHeaderColumn>
-                            <TableHeaderColumn dataField='CreatedBy'>PersonFromWarehouseId</TableHeaderColumn>
+                        : <Col md={10}>
+                            <BootstrapTable data={this.state.dataOptions} striped hover fluid>
+                                <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
+                                <TableHeaderColumn dataField='Number' width='50'
+                                                   dataAlign='center'>#</TableHeaderColumn>
+                                <TableHeaderColumn dataField='InventorySpaceName'
+                                                   headerAlign='center'>Склад</TableHeaderColumn>
+                                <TableHeaderColumn dataField='CreatedBy' dataAlign='center' width='200'
+                                                   headerAlign='center'>Создан</TableHeaderColumn>
 
-                            <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
-                                               dataAlign='center'>Buttons</TableHeaderColumn>
-                        </BootstrapTable>
+                                <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}
+                                                   width='135' headerAlign='center'
+                                                   dataAlign='center'>Действия</TableHeaderColumn>
+                            </BootstrapTable>
+                        </Col>
                 }
 
             </div>

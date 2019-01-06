@@ -28,17 +28,17 @@ export class RequestHeadTable extends Component {
              });
           */
         var data = [
-            {Id: 1, Number: 1, Shipper: "Mr Brown", InventorySpaceName: "space 1", Sum: "1254.05"},
-            {Id: 2, Number: 2, Shipper: "Mr Grey", InventorySpaceName: "space 2", Sum: "1254.05"},
-            {Id: 3, Number: 3, Shipper: "Mr White", InventorySpaceName: "space 3", Sum: "1254.05"},
-            {Id: 4, Number: 4, Shipper: "Mr Black", InventorySpaceName: "space 4", Sum: "1254.05"},
-            {Id: 5, Number: 5, Shipper: "Mr Green", InventorySpaceName: "space 5", Sum: "1254.05"},
-            {Id: 6, Number: 6, Shipper: "Mr Grey", InventorySpaceName: "space 3", Sum: "1254.05"},
-            {Id: 7, Number: 7, Shipper: "Mr Black", InventorySpaceName: "space 1", Sum: "1254.05"},
-            {Id: 8, Number: 8, Shipper: "Mr White", InventorySpaceName: "space 3", Sum: "1254.05"},
-            {Id: 9, Number: 9, Shipper: "Mr Black", InventorySpaceName: "space 4", Sum: "1254.05"},
-            {Id: 10, Number: 10, Shipper: "Mr Green", InventorySpaceName: "space 5", Sum: "1254.05"},
-            {Id: 11, Number: 11, Shipper: "Mr Grey", InventorySpaceName: "space 3", Sum: "1254.05"}];
+            {Id: 1, Number: 1, Shipper: 'ООО "ТД Великолукский молочныйкомбинат"', InventorySpaceName: "ШАЛАНДА П/Ф", Sum: "1254.05"},
+            {Id: 2, Number: 2, Shipper: 'ООО ТД "ЛИБЕР"', InventorySpaceName: "ЗАЛ КАШИ Б/П", Sum: "1254.05"},
+            {Id: 3, Number: 3, Shipper: 'ООО "КлинВет-Нева"', InventorySpaceName: "ЗАЛ СТЕЛЛАЖ МАСЛО РАСТ+МУКА", Sum: "1254.05"},
+            {Id: 4, Number: 4, Shipper: 'ЧП Виноградова И.И', InventorySpaceName: "ЗАЛ СТОЙКА ШОКОЛАДА", Sum: "1254.05"},
+            {Id: 5, Number: 5, Shipper: 'ООО "Классик"', InventorySpaceName: "ЗАЛ СУХИЕ ТОРТЫ", Sum: "1254.05"},
+            {Id: 6, Number: 6, Shipper: 'ООО "Норд"', InventorySpaceName: "ЗАЛ ВОСТОЧКА", Sum: "1254.05"},
+            {Id: 7, Number: 7, Shipper: 'ООО "Трансплан"', InventorySpaceName: "ЗАЛ СТЕЛЛАЖ КОНФЕТЫ ШТ", Sum: "1254.05"},
+            {Id: 8, Number: 8, Shipper: 'ООО "Ивадо"', InventorySpaceName: "ЗАЛ КОНФЕТЫ ВЕС", Sum: "1254.05"},
+            {Id: 9, Number: 9, Shipper: 'ООО "Вега"', InventorySpaceName: "ЗАЛ ПЕЧЕНЬЕ ШТ+СТОЙКИ", Sum: "1254.05"},
+            {Id: 10, Number: 10, Shipper: 'ООО ТД "Самсон"', InventorySpaceName: "РАСПРОДАЖНЫЕ СТОЛЫ", Sum: "1254.05"},
+            {Id: 11, Number: 11, Shipper: 'ООО "Северная Звезда"', InventorySpaceName: "ЗАЛ: СТЕЛЛАЖ С ГИГИЕНОЙ", Sum: "1254.05"}];
         this.setState({dataOptions: data, dataLoading: false});
     }
 
@@ -132,14 +132,14 @@ export class RequestHeadTable extends Component {
                         : <BootstrapTable data={this.state.dataOptions} striped hover fluid>
                             <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Shipper'>Поставщик</TableHeaderColumn>
-                            <TableHeaderColumn dataField='InventorySpaceName'
+                            <TableHeaderColumn dataField='Shipper'  headerAlign='center'>Поставщик</TableHeaderColumn>
+                            <TableHeaderColumn dataField='InventorySpaceName'  headerAlign='center'
                                                width='50%'>Склад</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Sum'
+                            <TableHeaderColumn dataField='Sum'  headerAlign='center' dataAlign='center'
                                                width='150px'>Сумма</TableHeaderColumn>
 
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
-                                               dataAlign='center'>Buttons</TableHeaderColumn>
+                                               headerAlign='center' dataAlign='center'>Действия</TableHeaderColumn>
                         </BootstrapTable>
                 }
 

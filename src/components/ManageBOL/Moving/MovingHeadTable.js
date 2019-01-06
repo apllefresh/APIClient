@@ -28,17 +28,17 @@ export class MovingHeadTable extends Component {
              });
           */
         var data = [
-            {Id: 1, Number: 1, InventorySpaceNameFrom: "space 1", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Brown"},
-            {Id: 2, Number: 2, InventorySpaceNameFrom: "space 2", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Grey"},
-            {Id: 3, Number: 3, InventorySpaceNameFrom: "space 3", InventorySpaceNameTo: "space 1", CreatedBy: "Mr White"},
-            {Id: 4, Number: 4, InventorySpaceNameFrom: "space 4", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Black"},
-            {Id: 5, Number: 5, InventorySpaceNameFrom: "space 5", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Green"},
-            {Id: 6, Number: 6, InventorySpaceNameFrom: "space 3", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Grey"},
-            {Id: 7, Number: 7, InventorySpaceNameFrom: "space 1", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Black"},
-            {Id: 8, Number: 8, InventorySpaceNameFrom: "space 3", InventorySpaceNameTo: "space 1", CreatedBy: "Mr White"},
-            {Id: 9, Number: 9, InventorySpaceNameFrom: "space 4", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Black"},
-            {Id: 10, Number: 10, InventorySpaceNameFrom: "space 5", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Green"},
-            {Id: 11, Number: 11, InventorySpaceNameFrom: "space 3", InventorySpaceNameTo: "space 1", CreatedBy: "Mr Grey"}
+            {Id: 1, Number: 1, InventorySpaceNameFrom: "ШАЛАНДА П/Ф", InventorySpaceNameTo: "РАСПРОДАЖНЫЕ СТОЛЫ", CreatedBy: "Заикина Т. А."},
+            {Id: 2, Number: 2, InventorySpaceNameFrom: "КОНТЕЙНЕР №20", InventorySpaceNameTo: "ЗАЛ: СТЕЛЛАЖ  С МЫЛОМ", CreatedBy: "Зельская Г. И."},
+            {Id: 3, Number: 3, InventorySpaceNameFrom: "КАМЕРА №14", InventorySpaceNameTo: "ЗАЛ: СТЕЛЛАЖ С ГИГИЕНОЙ", CreatedBy: "Артюшина М. Г."},
+            {Id: 4, Number: 4, InventorySpaceNameFrom: "ЗАЛ САХАР ВЕС,КРУПА ВЕС", InventorySpaceNameTo: "СКЛАД САХАР", CreatedBy: "Измайлова Е. А."},
+            {Id: 5, Number: 5, InventorySpaceNameFrom: "ЗАЛ КОНФЕТЫ ВЕС", InventorySpaceNameTo: "СКЛАД КОНДИТЕРКА", CreatedBy: "Кожевникова Н. С."},
+            {Id: 6, Number: 6, InventorySpaceNameFrom: "ЗАЛ ВОСТОЧКА", InventorySpaceNameTo: "СКЛАД КОНДИТЕРКА", CreatedBy: "Иванова Д. А."},
+            {Id: 7, Number: 7, InventorySpaceNameFrom: "ЗАЛ СТОЙКА ШОКОЛАДА", InventorySpaceNameTo: "СКЛАД КОНДИТЕРКА", CreatedBy: "Тюрина Ю. Н."},
+            {Id: 8, Number: 8, InventorySpaceNameFrom: "ЗАЛ СТЕЛЛАЖ МАСЛО РАСТ+МУКА ", InventorySpaceNameTo: "СКЛАД МАСЛО", CreatedBy: "Измайлова Е. А."},
+            {Id: 9, Number: 9, InventorySpaceNameFrom: "ЗАЛ СТЕЛЛАЖ СУПЫ Б/П+СЕНСОИ", InventorySpaceNameTo: "СКЛАД №2", CreatedBy: "Артюшина М. Г."},
+            {Id: 10, Number: 10, InventorySpaceNameFrom: "ЗАЛ СТЕЛЛАЖ КОНФЕТЫ КОРОБКИ ", InventorySpaceNameTo: "СКЛАД КОНДИТЕРКА", CreatedBy: "Кожевникова Н. С."},
+            {Id: 11, Number: 11, InventorySpaceNameFrom: "ЗАЛ ПЕЧЕНЬЕ ШТ+СТОЙКИ", InventorySpaceNameTo: "СКЛАД КОНДИТЕРКА", CreatedBy: "Иванова Д. А."}
             ];
         this.setState({dataOptions: data, dataLoading: false});
     }
@@ -133,12 +133,12 @@ export class MovingHeadTable extends Component {
                         : <BootstrapTable data={this.state.dataOptions} striped hover >
                             <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                             <TableHeaderColumn dataField='Number' width='50' dataAlign='center'>#</TableHeaderColumn>
-                            <TableHeaderColumn dataField='InventorySpaceNameFrom' width='30%'>Откуда</TableHeaderColumn>
-                            <TableHeaderColumn dataField='InventorySpaceNameTo' width='30%'>Куда</TableHeaderColumn>
-                            <TableHeaderColumn dataField='CreatedBy'>PersonFromWarehouseId</TableHeaderColumn>
+                            <TableHeaderColumn dataField='InventorySpaceNameFrom'  headerAlign='center' width='30%'>Откуда</TableHeaderColumn>
+                            <TableHeaderColumn dataField='InventorySpaceNameTo'  headerAlign='center' width='30%'>Куда</TableHeaderColumn>
+                            <TableHeaderColumn dataField='CreatedBy' dataAlign='center'  width='200' headerAlign='center'>Создан</TableHeaderColumn>
 
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='135'
-                                               dataAlign='center'>Buttons</TableHeaderColumn>
+                                               dataAlign='center'>Действия</TableHeaderColumn>
                         </BootstrapTable>
                 }
 

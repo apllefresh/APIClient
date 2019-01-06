@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import {Col, Row} from "react-bootstrap";
+import {Col} from "react-bootstrap";
 
 export class InventoryResultTable extends Component {
     constructor(props) {

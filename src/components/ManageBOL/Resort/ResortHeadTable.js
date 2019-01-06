@@ -146,11 +146,11 @@ export class ResortHeadTable extends Component {
                                 <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                                 <TableHeaderColumn dataField='Number' width='50'
                                                    dataAlign='center'>#</TableHeaderColumn>
-                                <TableHeaderColumn dataField='InventorySpaceName' width='50%'>Склад</TableHeaderColumn>
-                                <TableHeaderColumn dataField='CreatedBy'>Создан</TableHeaderColumn>
+                                <TableHeaderColumn dataField='InventorySpaceName' headerAlign='center'>Склад</TableHeaderColumn>
+                                <TableHeaderColumn dataField='CreatedBy' dataAlign='center' width='200' headerAlign='center'>Создан</TableHeaderColumn>
 
                                 <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}
-                                                   width='135' dataAlign='center'>Действия</TableHeaderColumn>
+                                                   width='135' headerAlign='center' dataAlign='center'>Действия</TableHeaderColumn>
                             </BootstrapTable>
                         </Col>
                 }

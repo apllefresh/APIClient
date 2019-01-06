@@ -26,7 +26,7 @@ export class ReSortHead extends Component {
                 <h1>Акты пересорта</h1>
                 <Row style={{height: '100%', padding: '10px 10px 10px 10px'}}>
 
-                    <Col xs={6} md={4}>
+                    <Col md={2}>
                         <WarehouseDropDownList updateDate={this.updateWarehouseId}/>
                     </Col>
                     <Col md={2}>

@@ -32,10 +32,10 @@ export class MovingHead extends Component {
                 <h1>Акты перемещений продуктов</h1>
                 <Row style={{height: '100%', padding: '10px 10px 10px 10px'}}>
 
-                    <Col xs={6} md={4}>
+                    <Col md={2}>
                         <WarehouseDropDownList id='1' updateDate={this.updateWarehouseIdFrom}/>
                     </Col>
-                    <Col xs={6} md={4}>
+                    <Col md={2}>
                         <WarehouseDropDownList id='2' updateDate={this.updateWarehouseIdTo}/>
                     </Col>
                     <Col md={2}>
