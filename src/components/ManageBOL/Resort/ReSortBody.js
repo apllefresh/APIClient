@@ -31,13 +31,13 @@ export class ReSortBody extends Component {
           */
         var tempdata = [
             {Id: 1, RowNumber: 1, SourceEan: "4606160000476", SourceName: "СЫРОК ГЛАЗИР ЗЕБРА С КАРАМ 50Г",TargetEan: "4606160000483", TargetName: "СЫРОК ГЛАЗИР ЗЕБРА ШОКОЛ БЕЛ ГЛ 28.8% 50Г ", Count: 10},
-            {Id: 2, RowNumber: 2, SourceEan: "4601231352452", SourceName: "Product 2",TargetEan: "4601231351354", TargetName: "Product 1", Count: 10},
-            {Id: 3, RowNumber: 3, SourceEan: "4601231354865", SourceName: "Product 3",TargetEan: "4601231352135", TargetName: "Product 1", Count: 10},
-            {Id: 4, RowNumber: 4, SourceEan: "4601231332829", SourceName: "Product 1",TargetEan: "4601231354663", TargetName: "Product 1", Count: 10},
-            {Id: 5, RowNumber: 5, SourceEan: "4601231354556", SourceName: "Product 1",TargetEan: "4601231351313", TargetName: "Product 1", Count: 10},
-            {Id: 6, RowNumber: 6, SourceEan: "4601231352845", SourceName: "Product 1",TargetEan: "4601231354561", TargetName: "Product 1", Count: 10},
-            {Id: 7, RowNumber: 7, SourceEan: "4601231353423", SourceName: "Product 1",TargetEan: "4601231348633", TargetName: "Product 1", Count: 10},
-            {Id: 8, RowNumber: 8, SourceEan: "4601231352756", SourceName: "Product 1",TargetEan: "4601231357863", TargetName: "Product 1", Count: 10}];
+            {Id: 2, RowNumber: 2, SourceEan: "4606203000081", SourceName: "СИГАРЕТЫ ЧЕСТЕРФИЛД БЛОК",TargetEan: "4606203000104", TargetName: "СИГАРЕТЫ ЧЕСТЕРФИЛД ЛАЙТ БЛОК", Count: 45},
+            {Id: 3, RowNumber: 3, SourceEan: "4607025361060", SourceName: "КОЛБАСА ДИАБЕТ-ПИТ 400Г",TargetEan: "4607025361061", TargetName: "КОЛБАСА ДИАБЕТ-ПИТ МОЛ. 400Г", Count: 13},
+            {Id: 4, RowNumber: 4, SourceEan: "4770100100271", SourceName: "ЧИПСЫ ЭСТРЕЛЛА УКРОП 90Г",TargetEan: "4770100100272", TargetName: "ЧИПСЫ ЭСТРЕЛЛА ПАПРИКА 90Г", Count: 54},
+            {Id: 5, RowNumber: 5, SourceEan: "4770100100275", SourceName: "ЧИПСЫ ЭСТРЕЛЛА СЫР 90Г",TargetEan: "4770100100274", TargetName: "ЧИПСЫ ЭСТРЕЛЛА ВЕТЧИНА 90Г", Count: 24},
+            {Id: 6, RowNumber: 6, SourceEan: "4603889001395", SourceName: "СОК МОЯ СЕМЬЯ ЗЕЛЕН ЯБЛОК 1Л",TargetEan: "4603889001392", TargetName: "СОК МОЯ СЕМЬЯ МУЛЬТИФРУКТ 1Л", Count: 12},
+            {Id: 7, RowNumber: 7, SourceEan: "4607005400567", SourceName: "ШОКОЛАД ДЕСЕРТ ОРЕХ ИЗЮМ 250Г",TargetEan: "4607005400568", TargetName: "ШОКОЛАД ДЕСЕРТ ФУНДУК 250Г", Count: 45},
+            {Id: 8, RowNumber: 8, SourceEan: "4607005400567", SourceName: "ШОКОЛАД ДЕСЕРТ ОРЕХ ИЗЮМ 250Г",TargetEan: "4607005400569", TargetName: "ШОКОЛАД ДЕСЕРТ МОЛОЧНЫЙ 250Г", Count: 2}];
         this.setState({data: tempdata});
     }
 

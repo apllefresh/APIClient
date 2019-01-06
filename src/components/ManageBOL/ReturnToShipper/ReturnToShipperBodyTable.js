@@ -77,9 +77,9 @@ export class ReturnToShipperBodyTable extends React.Component {
                             <TableHeaderColumn dataField='Price' width='150' headerAlign='center'
                                                dataAlign='center'>Цена закупки</TableHeaderColumn>
                             <TableHeaderColumn dataField='InvoiceCount' width='150' headerAlign='center'
-                                               dataAlign='center'>Количество в накладной</TableHeaderColumn>
+                                               dataAlign='center'>Количество<br/> в накладной</TableHeaderColumn>
                             <TableHeaderColumn dataField='ReturnCount' width='150' headerAlign='center'
-                                               dataAlign='center'>Количество возврата</TableHeaderColumn>
+                                               dataAlign='center'>Количество<br/> возврата</TableHeaderColumn>
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}
                                                width='100' dataAlign='center'>Действия</TableHeaderColumn>
                         </BootstrapTable>

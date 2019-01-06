@@ -77,7 +77,7 @@ export class RePriceBodyTable extends React.Component {
                             <TableHeaderColumn dataField='SourcePrice' width='150' headerAlign='center'
                                                dataAlign='center'>Исходная цена</TableHeaderColumn>
                             <TableHeaderColumn dataField='TargetPrice' width='150' headerAlign='center'
-                                               dataAlign='center'>Результирующая цена</TableHeaderColumn>
+                                               dataAlign='center'>Результирующая <br/> цена</TableHeaderColumn>
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}
                                                width='100' dataAlign='center'>Действия</TableHeaderColumn>
                         </BootstrapTable>

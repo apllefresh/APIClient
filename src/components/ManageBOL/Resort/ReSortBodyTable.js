@@ -71,12 +71,12 @@ export class ReSortBodyTable extends React.Component {
                             <TableHeaderColumn dataField='Id'  hidden></TableHeaderColumn>
                             <TableHeaderColumn dataField='RowNumber' width='50' headerAlign='center'
                                                dataAlign='center'>#</TableHeaderColumn>
-                            <TableHeaderColumn dataField='SourceEan' width='250' isKey={true} headerAlign='center'
-                                               dataAlign='center'>Исходный штрихкод</TableHeaderColumn>
+                            <TableHeaderColumn dataField='SourceEan' width='150' isKey={true} headerAlign='center'
+                                               dataAlign='center'>Исходный<br/> штрихкод</TableHeaderColumn>
                             <TableHeaderColumn dataField='SourceName' headerAlign='center'>Исходный
                                 продукт</TableHeaderColumn>
-                            <TableHeaderColumn dataField='TargetEan' width='250'  headerAlign='center'
-                                               dataAlign='center'>Результирующий штрихкод</TableHeaderColumn>
+                            <TableHeaderColumn dataField='TargetEan' width='150'  headerAlign='center'
+                                               dataAlign='center'>Результирующий <br/> штрихкод</TableHeaderColumn>
                             <TableHeaderColumn dataField='TargetName' headerAlign='center'>Результирующий
                                 продукт</TableHeaderColumn>
                             <TableHeaderColumn dataField='Count' width='100' headerAlign='center'

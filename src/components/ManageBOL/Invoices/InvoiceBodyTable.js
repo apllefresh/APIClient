@@ -79,7 +79,7 @@ export class InvoiceBodyTable extends React.Component {
                             <TableHeaderColumn dataField='BuyPrice' width='150' headerAlign='center'
                                                dataAlign='center'>Цена закупки</TableHeaderColumn>
                             <TableHeaderColumn dataField='RequestCount' width='150' headerAlign='center'
-                                               dataAlign='center'>Количество в заявке</TableHeaderColumn>
+                                               dataAlign='center' heigth='200px'>Количество <br/> в заявке</TableHeaderColumn>
                             <TableHeaderColumn dataField='InvoiceCount' width='150' headerAlign='center'
                                                dataAlign='center'>Количество факт.</TableHeaderColumn>
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}

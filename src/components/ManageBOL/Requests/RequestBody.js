@@ -40,65 +40,72 @@ export class RequestBody extends Component {
             {
                 Id: 1,
                 RowNumber: 1,
-                Ean: "4601231352829",
-                Name: "Product 1",
-                SalePrice: 89.00,
-                BuyPrice: 99.00,
+                Ean: "4601636301309",
+                Name: "МАЙОНЕЗ ПРОВАНС 67% 850Г ВД ",
+                SalePrice: "89.00",
+                BuyPrice: "99.00",
                 Count: 10
             },
             {
                 Id: 2,
                 RowNumber: 2,
-                Ean: "4601231352452",
-                Name: "Product 2",
-                SalePrice: 119.00,
-                BuyPrice: 109.00,
+                Ean: "4601870000402",
+                Name: "КОТЛЕТЫ СНЕЖНАЯ СТРАНА КЛАССИЧЕСКИЕ 450Г ",
+                SalePrice: "119.00",
+                BuyPrice: "109.00",
                 Count: 10
             },
             {
                 Id: 3,
                 RowNumber: 3,
-                Ean: "4601231354865",
-                Name: "Product 3",
-                SalePrice: 229.00,
-                BuyPrice: 159.00,
+                Ean: "4607025361060",
+                Name: "КОЛБАСА ДИАБЕТ-ПИТ 400Г",
+                SalePrice: "229.00",
+                BuyPrice: "159.00",
                 Count: 10
             },
             {
                 Id: 4,
                 RowNumber: 4,
-                Ean: "4601231332829",
-                Name: "Product 1",
-                SalePrice: 169.00,
-                BuyPrice: 179.00,
+                Ean: "4607026600120",
+                Name: "ПАСТА ТОМАТН НАЦИОН КУХНЯ 1000Г",
+                SalePrice: "169.00",
+                BuyPrice: "179.00",
                 Count: 10
             },
-            {Id: 5, RowNumber: 5, Ean: "4601231354556", Name: "Product 1", SalePrice: 19.00, BuyPrice: 9.00, Count: 10},
+            {
+                Id: 5,
+                RowNumber: 5,
+                Ean: "4606160000476",
+                Name: "СЫРОК ГЛАЗИР ЗЕБРА С КАРАМ 50Г ",
+                SalePrice: "19.00", 
+                BuyPrice: "9.00", 
+                Count: 10},
             {
                 Id: 6,
                 RowNumber: 6,
-                Ean: "4601231352845",
-                Name: "Product 1",
-                SalePrice: 1059.00,
-                BuyPrice: 1359.00,
+                Ean: "4008429008535",
+                Name: "НАПОЛНИТЕЛЬ КАТСАН ГИГИЕН 5Л",
+                SalePrice: "1059.00",
+                BuyPrice: "1359.00",
                 Count: 10
             },
             {
                 Id: 7,
                 RowNumber: 7,
-                Ean: "4601231353423",
-                Name: "Product 1",
-                SalePrice: 359.00,
-                BuyPrice: 309.00,
+                Ean: "4607005400567",
+                Name: "ШОКОЛАД ДЕСЕРТ ОРЕХ ИЗЮМ 250Г",
+                SalePrice: "359.00",
+                BuyPrice: "309.00",
                 Count: 10
             },
             {
                 Id: 8,
                 RowNumber: 8,
-                Ean: "4601231352756",
-                Name: "Product 1",
-                SalePrice: 129.00,
-                BuyPrice: 99.00,
+                Ean: "4770100100271",
+                Name: "ЧИПСЫ ЭСТРЕЛЛА УКРОП 90Г",
+                SalePrice: "129.00",
+                BuyPrice: "99.00",
                 Count: 10
             }
         ];
@@ -108,8 +115,8 @@ export class RequestBody extends Component {
     render() {
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
-                <h1>Акт переоценки </h1>
-
+                <h1>Заявка №124 </h1>
+                <p></p>
                 <Row style={{height: '100px', width: '100%'}}>
                     <Col md={4}>
                         <WarehouseDropDownList updateDat={this.updateWarehouseId}/>

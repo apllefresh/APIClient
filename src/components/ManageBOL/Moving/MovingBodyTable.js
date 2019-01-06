@@ -70,10 +70,10 @@ export  class MovingBodyTable extends React.Component {
                         <BootstrapTable  data={this.props.data} options={options} renderAlert={false} insertRow>
                             <TableHeaderColumn dataField='Id' hidden></TableHeaderColumn>
                             <TableHeaderColumn dataField='RowNumber' width='50' headerAlign='center' dataAlign='center' >#</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Ean' width='200' isKey={true}  headerAlign='center' dataAlign='center'>EAN</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Name'  headerAlign='center'>Name</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Count' width='100' headerAlign='center' dataAlign='center'>Count</TableHeaderColumn>
-                            <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='100' dataAlign='center'>Buttons</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Ean' width='200' isKey={true}  headerAlign='center' dataAlign='center'>Штрихкод</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Name'  headerAlign='center'>Наименование</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Count' width='100' headerAlign='center' dataAlign='center'>Количество</TableHeaderColumn>
+                            <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)} width='100' dataAlign='center'>Действия</TableHeaderColumn>
                         </BootstrapTable>
                     </Col>
                 </Row>

@@ -68,15 +68,15 @@ export class AnnulmentBody extends Component {
                         <WarehouseDropDownList updateDate={this.updateWarehouseId}/>
                     </Col>
                     <Col md={2}>
+                        <Button bsStyle="primary pull-right" onClick={() => this.setState({showModalLoadProducts: true})}>
+                            Загрузить данные со сканера
+                        </Button>
+                    </Col>
+                    <Col md={2}>
                         <DropdownButton title="Выбрать действие" id="bg-vertical-dropdown-2">
                             <MenuItem eventKey="1">Подтвердить</MenuItem>
                             <MenuItem eventKey="2">Отклонить</MenuItem>
                         </DropdownButton>
-                    </Col>
-                    <Col md={2}>
-                        <Button bsStyle="primary pull-right" onClick={() => this.setState({showModalLoadProducts: true})}>
-                            Загрузить данные со сканера
-                        </Button>
                     </Col>
                 </Row>
                 <Row style={{height: '100%'}}>
