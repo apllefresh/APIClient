@@ -50,21 +50,21 @@ export class InvoiceBodyTable extends React.Component {
 
                 <Modal show={this.state.showModalDeleteProduct} onHide={this.handleCloseModalDeleteProduct}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Delete Product from act</Modal.Title>
+                        <Modal.Title>Удаление продукта из акта</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <h4>Delete product "Product 1" from act. Are you sure?</h4>
+                        <h4>Удалить продукт из акта?</h4>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.handleCloseModalDeleteProduct}>No</Button>
-                        <Button className='btn btn-primary' onClick={this.handleCloseModalDeleteProduct}>Sure</Button>
+                        <Button onClick={this.handleCloseModalDeleteProduct}>Отмена</Button>
+                        <Button className='btn btn-primary' onClick={this.handleCloseModalDeleteProduct}>Удалить</Button>
                     </Modal.Footer>
                 </Modal>
 
                 <Row>
                     <Col md={12}>
                         <Button className="pull-right" bsStyle="success">
-                            Save Changes
+                            Сохранить
                         </Button>
                         <BootstrapTable data={this.props.data} options={options} renderAlert={false} insertRow >
                             <TableHeaderColumn dataField='Id' hidden></TableHeaderColumn>

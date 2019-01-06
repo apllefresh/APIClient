@@ -30,7 +30,7 @@ export class ReSortBody extends Component {
              });
           */
         var tempdata = [
-            {Id: 1, RowNumber: 1, SourceEan: "4601231352829", SourceName: "Product 1",TargetEan: "4601231345645", TargetName: "Product 1", Count: 10},
+            {Id: 1, RowNumber: 1, SourceEan: "4606160000476", SourceName: "СЫРОК ГЛАЗИР ЗЕБРА С КАРАМ 50Г",TargetEan: "4606160000483", TargetName: "СЫРОК ГЛАЗИР ЗЕБРА ШОКОЛ БЕЛ ГЛ 28.8% 50Г ", Count: 10},
             {Id: 2, RowNumber: 2, SourceEan: "4601231352452", SourceName: "Product 2",TargetEan: "4601231351354", TargetName: "Product 1", Count: 10},
             {Id: 3, RowNumber: 3, SourceEan: "4601231354865", SourceName: "Product 3",TargetEan: "4601231352135", TargetName: "Product 1", Count: 10},
             {Id: 4, RowNumber: 4, SourceEan: "4601231332829", SourceName: "Product 1",TargetEan: "4601231354663", TargetName: "Product 1", Count: 10},
@@ -51,9 +51,9 @@ export class ReSortBody extends Component {
                         <WarehouseDropDownList updateDat={this.updateWarehouseId}/>
                     </Col>
                     <Col className="pull-right">
-                        <DropdownButton title="Select Action" id="bg-vertical-dropdown-2">
-                            <MenuItem eventKey="1">Accept</MenuItem>
-                            <MenuItem eventKey="2">Revert</MenuItem>
+                        <DropdownButton title="Выбрать действие" id="bg-vertical-dropdown-2">
+                            <MenuItem eventKey="1">Подтвердить</MenuItem>
+                            <MenuItem eventKey="2">Отклонить</MenuItem>
                         </DropdownButton>
                     </Col>
                 </Row>

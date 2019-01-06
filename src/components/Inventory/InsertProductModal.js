@@ -37,7 +37,7 @@ export class InsertProductModal extends React.Component {
         return (
             <div className='modal-content react-bs-table-insert-modal'>
                 <div className='modal-header react-bs-table-inser-modal-header'>
-                    <h4 className='modal-title'>Custom Insert Modal</h4>
+                    <h4 className='modal-title'>Добавление товара в акт</h4>
 
                 </div>
                 <div className='modal-body'>
@@ -65,8 +65,8 @@ export class InsertProductModal extends React.Component {
 
                 </div>
                 <div className='modal-footer react-bs-table-inser-modal-footer'>
-                    <button className='btn btn-default' onClick={onModalClose}>Leave</button>
-                    <button className='btn btn-primary' onClick={() => this.handleSaveBtnClick(columns, onSave)}>Confirm</button>
+                    <button className='btn btn-default' onClick={onModalClose}>Отмена</button>
+                    <button className='btn btn-primary' onClick={() => this.handleSaveBtnClick(columns, onSave)}>Добавить</button>
                 </div>
             </div>
         );

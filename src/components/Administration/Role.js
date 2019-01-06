@@ -9,7 +9,6 @@ import {
     Checkbox,
     ControlLabel, FormGroup, FormControl
 } from "react-bootstrap";
-import Select from 'react-select'
 import 'react-dropdown/style.css'
 
 

@@ -92,21 +92,39 @@ export class AnnulmentHeadTable extends Component {
             <div>
                 <Modal show={this.state.showModalDeleteHead} onHide={this.handleCloseModalDeleteHead}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Delete Inventory Act</Modal.Title>
+                        <Modal.Title>Удаление акта списания</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <h4>Are you sure?</h4>
+                        <h4>Удалить акт?</h4>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={this.handleCloseModalDeleteHead}>No</Button>
-                        <Button className='btn btn-primary' onClick={this.handleCloseModalDeleteHead}>Sure</Button>
+                        <Button onClick={this.handleCloseModalDeleteHead}>Отмена</Button>
+                        <Button className='btn btn-primary' onClick={this.handleCloseModalDeleteHead}>Удалить</Button>
                     </Modal.Footer>
                 </Modal>
 
+                <div className="react-bs-table-tool-bar ">
+                    <div className="row">
 
-                <Button hidden={this.state.dataLoading} style={{padding: '10px 10px 10px 10px'}}>
-                    Создать акт списания
-                </Button>
+                        <div className="col-xs-6 col-sm-6 col-md-6 col-lg-8">
+
+                            <div className="btn-group btn-group-sm" role="group" hidden={this.state.dataLoading}>
+                                <button type="button" className="btn btn-info react-bs-table-add-btn ">
+                                    <span>
+                                        <i className="fa glyphicon glyphicon-plus fa-plus"> </i> 
+                                        Создать акт списания
+                                    </span>
+                                </button>
+                                <button type="button" className="btn btn-success react-bs-table-csv-btn  hidden-print">
+                                    <span>
+                                        <i className="fa glyphicon glyphicon-export fa-download"></i>
+                                        Экпорт в .xls
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {
                     this.state.dataLoading ?
                         <p><em>dd</em></p>

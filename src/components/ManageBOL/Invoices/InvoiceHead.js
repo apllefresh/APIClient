@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Grid, Row, Col, ControlLabel, Panel} from 'react-bootstrap';
+import {Grid, Row, Col, ControlLabel, Panel, FormGroup} from 'react-bootstrap';
 import {WarehouseDropDownList} from "../../Inventory/WarehouseDropDownList";
 import DatePicker from "react-datepicker";
 import {ShipperDropDownList} from "../../Product/ShipperDropDownList";
@@ -47,20 +47,17 @@ export class InvoiceHead extends Component {
                             <Panel.Body>
                                 <Grid fluid>
                                     <Row>
-                                        <Col>
-                                            <ControlLabel>От</ControlLabel>
-                                        </Col>
-                                        <Col>
-                                            <DatePicker value="01/01/2019"/>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col>
-                                            <ControlLabel>До</ControlLabel>
-                                        </Col>
-                                        <Col>
-                                            <DatePicker value="01/01/2019"/>
-                                        </Col>
+                                        <FormGroup style={{width: '300px'}}>
+                                            <Col>
+                                                <ControlLabel style={{paddingRight:'10px'}}>От</ControlLabel>
+                                                <DatePicker value="01/01/2019"/>
+                                            </Col>
+                                            <Col>
+                                                <ControlLabel style={{paddingRight:'10px'}}>До</ControlLabel>
+                                                <DatePicker value="01/01/2019"/>
+                                            </Col>
+                                        </FormGroup>
+
                                     </Row>
                                 </Grid>
                             </Panel.Body>

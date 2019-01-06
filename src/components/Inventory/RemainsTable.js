@@ -19,6 +19,22 @@ export  class RemainsTable extends React.Component {
             <Grid fluid>
 
                 <Row>
+                    <div className="react-bs-table-tool-bar ">
+                        <div className="row">
+
+                            <div className="col-xs-6 col-sm-6 col-md-6 col-lg-8">
+
+                                <div className="btn-group btn-group-sm" role="group" hidden={this.state.dataLoading}>
+                                    <button type="button" className="btn btn-success react-bs-table-csv-btn  hidden-print">
+                                    <span>
+                                        <i className="fa glyphicon glyphicon-export fa-download"></i>
+                                        Экпорт в .xls
+                                    </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <Col md={10}>
                         <BootstrapTable  data={this.props.data} options={options} renderAlert={false} >
                             <TableHeaderColumn dataField='Id' hidden></TableHeaderColumn>

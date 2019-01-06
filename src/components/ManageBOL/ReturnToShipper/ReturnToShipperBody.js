@@ -151,9 +151,9 @@ export class ReturnToShipperBody extends Component {
                         </Button>
                     </Col>
                     <Col className="pull-right">
-                        <DropdownButton title="Select Action" id="bg-vertical-dropdown-2">
-                            <MenuItem eventKey="1">Accept</MenuItem>
-                            <MenuItem eventKey="2">Revert</MenuItem>
+                        <DropdownButton title="Выбрать действие" id="bg-vertical-dropdown-2">
+                            <MenuItem eventKey="1">Подтвердить</MenuItem>
+                            <MenuItem eventKey="2">Отклонить</MenuItem>
                         </DropdownButton>
                     </Col>
                 </Row>

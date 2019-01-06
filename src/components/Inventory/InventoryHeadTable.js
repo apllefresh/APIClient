@@ -129,6 +129,12 @@ export class InventoryHeadTable extends Component {
                                         Создать акт инвентаризации
                                     </span>
                                 </button>
+                                <button type="button" className="btn btn-success react-bs-table-csv-btn  hidden-print">
+                                    <span>
+                                        <i className="fa glyphicon glyphicon-export fa-download"></i>
+                                        Экпорт в .xls
+                                    </span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -139,7 +145,7 @@ export class InventoryHeadTable extends Component {
                         <p><em>dd</em></p>
                         :
                         <Col md={10}>
-                            <BootstrapTable data={this.state.dataOptions} striped hover fluid>
+                            <BootstrapTable data={this.state.dataOptions} striped hover fluid >
                                 <TableHeaderColumn dataField='Id' isKey hidden>Product ID</TableHeaderColumn>
                                 <TableHeaderColumn dataField='Number' width='50'
                                                    dataAlign='center'>#</TableHeaderColumn>
