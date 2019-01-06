@@ -23,6 +23,7 @@ import {UserList} from "./components/Administration/UserList";
 import {Departments} from "./components/Administration/Departments";
 import {RoleList} from "./components/Administration/RoleList";
 import {RealizChart} from "./components/Realiz/RealizChart";
+import {Bills} from "./components/Realiz/Bills";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -155,9 +156,9 @@ export class NavMenu extends Component {
                                             График реализации
                                         </NavItem>
                                     </LinkContainer>
-                                    <LinkContainer to={'/RouteEditor'} Component={RouteEditor}>
+                                    <LinkContainer to={'/Bills'} Component={Bills}>
                                         <NavItem>
-                                            Маршруты
+                                            Чеки
                                         </NavItem>
                                     </LinkContainer>
                                 </div>

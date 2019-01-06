@@ -43,7 +43,6 @@ export class Layout extends Component {
                                                 Менеджер
                                             </ControlLabel>
                                         </li>
-                                        <li><a style={{color: 'darkgrey', fontWeight: 'bold', padding:'15px 15px 15px 15px'  }} href="#">Помощь</a></li>
                                         <li><a style={{color: 'darkgrey', fontWeight: 'bold', padding:'15px 15px 15px 15px'  }} href='/Login.html'>Выйти</a></li>
                                     </ul>
                                     <form className="navbar-form navbar-right">

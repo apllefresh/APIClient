@@ -42,6 +42,7 @@ import {Departments} from "./components/Administration/Departments";
 import {RoleList} from "./components/Administration/RoleList";
 import {Role} from "./components/Administration/Role";
 import {RealizChart} from "./components/Realiz/RealizChart";
+import {Bills} from "./components/Realiz/Bills";
 
 registerLocale('ru', ru);
 setDefaultLocale('ru');
@@ -53,7 +54,7 @@ export default class App extends Component {
     render() {
         return (
             <Layout>
-                {/*<Route exact path='./ /Login.html' />*/}
+                <Route exact path='/'  component={RealizChart} />
                 <Route path='/InventoryHead' component={InventoryHead}/>
                 <Route path='/InventoryBody' component={InventoryBody}/>
                 <Route path='/Warehouses' component={Warehouses}/>
@@ -82,6 +83,7 @@ export default class App extends Component {
                 <Route path='/ProductBody' component={ProductBody}/>
 
                 <Route path='/RealizChart' component={RealizChart}/>
+                <Route path='/Bills' component={Bills}/>
 
                 <Route path='/ProductPrintTemplates' component={ProductPrintTemplates}/>
                 <Route path='/ProductPrintTemplateEditor' component={ProductPrintTemplateEditor}/>
