@@ -35,11 +35,13 @@ import {ProductBody} from "./components/Product/ProductBody";
 import {ProductPrintTemplates} from "./components/Settings/ProductPrintTemplates";
 import {ProductPrintTemplateEditor} from "./components/Settings/ProductPrintTemplateEditor";
 import {RouteEditor} from "./components/Settings/RouteEditor";
+
 import {UserList} from "./components/Administration/UserList";
 import {User} from "./components/Administration/User";
 import {Departments} from "./components/Administration/Departments";
 import {RoleList} from "./components/Administration/RoleList";
 import {Role} from "./components/Administration/Role";
+import {RealizChart} from "./components/Realiz/RealizChart";
 
 registerLocale('ru', ru);
 setDefaultLocale('ru');
@@ -79,6 +81,8 @@ export default class App extends Component {
                 <Route path='/ProductHead' component={ProductHead}/>
                 <Route path='/ProductBody' component={ProductBody}/>
 
+                <Route path='/RealizChart' component={RealizChart}/>
+
                 <Route path='/ProductPrintTemplates' component={ProductPrintTemplates}/>
                 <Route path='/ProductPrintTemplateEditor' component={ProductPrintTemplateEditor}/>
                 <Route path='/RouteEditor' component={RouteEditor}/>
@@ -88,7 +92,7 @@ export default class App extends Component {
                 <Route path='/Departments' component={Departments}/>
                 <Route path='/RoleList' component={RoleList}/>
                 <Route path='/Role' component={Role}/>
-                
+
             </Layout>
         );
     }

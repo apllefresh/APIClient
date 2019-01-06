@@ -22,6 +22,7 @@ import {RouteEditor} from "./components/Settings/RouteEditor";
 import {UserList} from "./components/Administration/UserList";
 import {Departments} from "./components/Administration/Departments";
 import {RoleList} from "./components/Administration/RoleList";
+import {RealizChart} from "./components/Realiz/RealizChart";
 
 export class NavMenu extends Component {
     displayName = NavMenu.name;
@@ -144,10 +145,29 @@ export class NavMenu extends Component {
                                 : <p></p>
                         }
                         <NavItem onClick={() => this.setState({Show: (this.state.Show === 4 ? 0 : 4)})}>
-                            Настройки
+                            Реализация
                         </NavItem>
                         {
                             this.state.Show === 4 ?
+                                <div style={{paddingLeft: '30px'}}>
+                                    <LinkContainer to={'/RealizChart'} Component={RealizChart}>
+                                        <NavItem>
+                                            График реализации
+                                        </NavItem>
+                                    </LinkContainer>
+                                    <LinkContainer to={'/RouteEditor'} Component={RouteEditor}>
+                                        <NavItem>
+                                            Маршруты
+                                        </NavItem>
+                                    </LinkContainer>
+                                </div>
+                                : <p></p>
+                        }
+                        <NavItem onClick={() => this.setState({Show: (this.state.Show === 5 ? 0 : 5)})}>
+                            Настройки
+                        </NavItem>
+                        {
+                            this.state.Show === 5 ?
                                 <div style={{paddingLeft: '30px'}}>
                                     <LinkContainer to={'/ProductPrintTemplates'} Component={ProductPrintTemplates}>
                                         <NavItem>
@@ -163,11 +183,11 @@ export class NavMenu extends Component {
                                 : <p></p>
                         }
 
-                        <NavItem onClick={() => this.setState({Show: (this.state.Show === 5 ? 0 : 5)})}>
+                        <NavItem onClick={() => this.setState({Show: (this.state.Show === 6 ? 0 : 6)})}>
                             Администрирование
                         </NavItem>
                         {
-                            this.state.Show === 5 ?
+                            this.state.Show === 6 ?
                                 <div style={{paddingLeft: '30px'}}>
                                     <LinkContainer to={'/UserList'} Component={UserList}>
                                         <NavItem>
