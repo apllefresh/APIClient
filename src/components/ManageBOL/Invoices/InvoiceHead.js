@@ -30,7 +30,7 @@ export class InvoiceHead extends Component {
 
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
-                <h1>Накладные</h1>
+                <h1>Акты поступления товаров</h1>
                 <Row style={{height: '100%', padding: '10px 10px 10px 10px'}}>
                     <Col md={3}>
                         <ShipperDropDownList updateDate={this.updateShipperId}/>

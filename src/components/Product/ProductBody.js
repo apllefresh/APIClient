@@ -17,7 +17,7 @@ export class ProductBody extends Component {
     render() {
         return (
             <Grid fluid style={{height: '850px', overflow: 'auto'}}>
-                <h1>Товар </h1>
+                <h1>Информация о товаре </h1>
                 <p></p>
                
                 <Row style={{height: '300px', width: '100%'}}>

@@ -160,11 +160,11 @@ export class ReturnToShipperBody extends Component {
                     <Col md={3}>
                         <ShipperDropDownList updateDate={this.updateShipperId}/>
                     </Col>
-                    <Col md={2}>
-                        <Button bsStyle="primary" onClick={() => this.setState({showModalLoadProducts: true})}>
-                            Загрузить данные со сканера
-                        </Button>
-                    </Col>
+                    {/*<Col md={2}>*/}
+                        {/*<Button bsStyle="primary" onClick={() => this.setState({showModalLoadProducts: true})}>*/}
+                            {/*Загрузить данные со сканера*/}
+                        {/*</Button>*/}
+                    {/*</Col>*/}
                     <Col className="pull-right">
                         <DropdownButton title="Выбрать действие" id="bg-vertical-dropdown-2">
                             <MenuItem eventKey="1">Подтвердить</MenuItem>

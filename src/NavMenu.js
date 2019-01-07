@@ -104,7 +104,7 @@ export class NavMenu extends Component {
                                     </LinkContainer>
                                     <LinkContainer to={'/InvoiceHead'} Component={InvoiceHead}>
                                         <NavItem>
-                                            Накладные
+                                            Приход
                                         </NavItem>
                                     </LinkContainer>
                                     <LinkContainer to={'/AnnulmentHead'} Component={AnnulmentHead}>
@@ -122,7 +122,7 @@ export class NavMenu extends Component {
                         }
 
                         <NavItem onClick={() => this.setState({Show: (this.state.Show === 3 ? 0 : 3)})}>
-                            Продукты
+                            Товары
                         </NavItem>
                         {
                             this.state.Show === 3 ?

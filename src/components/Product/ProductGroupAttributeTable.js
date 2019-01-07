@@ -25,7 +25,7 @@ export class ProductGroupAttributeTable extends React.Component {
         var data = [
             {Id: 1, Type: "Текстовое поле", Property: "Штрихкод", Value: "456124545"},
             {Id: 2, Type: "Число", Property: "Наименоание", Value: "Печенька"},
-            {Id: 3, Type: "Справочник", Property: "Товарная группа", Value: "Кондитерские изделия"}
+            {Id: 3, Type: "Чекбокс", Property: "Весовой товар", Value: "Кондитерские изделия"}
         ];
         this.setState({data: data});
     }
@@ -65,12 +65,10 @@ export class ProductGroupAttributeTable extends React.Component {
                     <Col md={12}>
                         <BootstrapTable data={this.state.data} renderAlert={false} insertRow options={options} >
                             <TableHeaderColumn dataField='Id' hidden></TableHeaderColumn>
-                            <TableHeaderColumn dataField='Type' width='150px' headerAlign='center'
-                                               dataAlign='center'>Тип значений</TableHeaderColumn>
                             <TableHeaderColumn dataField='Property' width='150px' isKey={true} headerAlign='center'
                                                dataAlign='center'>Свойство</TableHeaderColumn>
-                            <TableHeaderColumn dataField='Value' headerAlign='center'
-                                               dataAlign='center'>Значение</TableHeaderColumn>
+                            <TableHeaderColumn dataField='Type' width='150px' headerAlign='center'
+                                               dataAlign='center'>Тип значений</TableHeaderColumn>
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}
                                                width='100' dataAlign='center'>Действия</TableHeaderColumn>
                         </BootstrapTable>

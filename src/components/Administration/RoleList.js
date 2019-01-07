@@ -87,7 +87,7 @@ export class RoleList extends Component {
 
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
-                <h1>Пользователи</h1>
+                <h1>Роли</h1>
                 <p></p>
                 <Row style={{ width:'500px'}}>
                     <Modal show={this.state.showModalDeleteHead} onHide={this.handleCloseModalDeleteHead}>

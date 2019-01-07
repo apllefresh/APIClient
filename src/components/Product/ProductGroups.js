@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import TreeView from 'treeview-react-bootstrap';
-import {Grid, Row, Col, Button, Panel, ListGroup, ListGroupItem} from "react-bootstrap";
+import {Grid, Row, Col, Button, Panel, ListGroup, ListGroupItem, ControlLabel} from "react-bootstrap";
 import {ProductGroupAttributeTable} from "./ProductGroupAttributeTable";
 
 //https://www.npmjs.com/package/treeview-react-bootstrap
@@ -82,7 +82,7 @@ export class ProductGroups extends Component {
                 <Panel>
                     <h1>Товарные группы </h1>
                     <Row >
-                        <Col sm={4} >
+                        <Col sm={6} >
                             <ListGroup >
                                 <ListGroupItem>
                                     <Row style={{height: '70px', overflow: 'auto'}}>
@@ -99,7 +99,12 @@ export class ProductGroups extends Component {
                                 </ListGroupItem>
                             </ListGroup>
                         </Col>
-                        <Col sm={8}>
+                        <Col sm={4}>
+                            <ControlLabel>
+                                Товарная группа:
+                                <br/>Зал -> Мясо -> Охлажденные
+                            </ControlLabel>
+                            <p></p>
                             <ProductGroupAttributeTable/>
                         </Col>
                     </Row>

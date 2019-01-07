@@ -58,18 +58,19 @@ export class InsertProductGroupAttributeModal extends React.Component {
                     <div className='form-group' key={columns[0].field}>
                         <input hidden ref={columns[0].field} type='text' defaultValue={0}/>
                     </div>
-                    <Select placeholder={columns[0].name} options={this.state.options}  />
+                    
 
+
+                    <div className='form-group' key={columns[1].field}>
+                        <label>{columns[1].name} : </label>
+                        <input className="form-control editor edit-text" onKeyDown={this.keyPress}
+                               onChange={this.handleChange} ref={columns[1].field} type='text' defaultValue={''}/>
+                    </div>
 
                     <div className='form-group' key={columns[2].field}>
                         <label>{columns[2].name} : </label>
-                        <input className="form-control editor edit-text" onKeyDown={this.keyPress}
-                               onChange={this.handleChange} ref={columns[2].field} type='text' defaultValue={''}/>
-                    </div>
-
-                    <div className='form-group' key={columns[3].field}>
-                        <label>{columns[3].name} : </label>
-                        <input className="form-control editor edit-text" ref={columns[3].field} type='text'/>
+                        <Select placeholder={columns[0].name} options={this.state.options}  />
+                        {/*<input className="form-control editor edit-text" ref={columns[2].field} type='text'/>*/}
                     </div>
 
 

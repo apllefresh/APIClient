@@ -25,40 +25,68 @@ export class WarehouseDropDownList extends Component {
     componentDidMount() {
         var data = [
             {
-                label: 'Granddad 1',
+                label: 'Зал',
                 value: 1,
                 children: [
                     {
-                        label: 'dad 1',
+                        label: 'Стелаж круп',
                         value: 2,
                         children: [
                             {
-                                label: 'son 1',
+                                label: 'Полка 1',
                                 value: 3
                             },
                             {
-                                label: 'son 2',
+                                label: 'Полка 2',
                                 value: 4
+                            }
+                        ]
+                    },
+                    {
+                        label: 'Стелаж соков',
+                        value: 2,
+                        children: [
+                            {
+                                label: 'Полка 1',
+                                value: 5
+                            },
+                            {
+                                label: 'Полка 2',
+                                value: 6
                             }
                         ]
                     }
                 ]
             },
             {
-                label: 'Granddad 2',
-                value: 5,
+                label: 'Склад',
+                value: 7,
                 children: [
                     {
-                        label: 'dad 2',
-                        value: 6,
+                        label: 'Морозиьные камеры',
+                        value: 8,
                         children: [
                             {
-                                label: 'son 3',
-                                value: 7
+                                label: 'Камера 1',
+                                value: 9
                             },
                             {
-                                label: 'son 4',
-                                value: 8
+                                label: 'Камера 1',
+                                value: 10
+                            }
+                        ]
+                    },
+                    {
+                        label: 'Склад муки',
+                        value: 11,
+                        children: [
+                            {
+                                label: 'Полка 1',
+                                value: 12                            
+                            },
+                            {
+                                label: 'Полка 2',
+                                value: 13
                             }
                         ]
                     }

@@ -74,11 +74,11 @@ export class ReSortBodyTable extends React.Component {
                             <TableHeaderColumn dataField='SourceEan' width='150' isKey={true} headerAlign='center'
                                                dataAlign='center'>Исходный<br/> штрихкод</TableHeaderColumn>
                             <TableHeaderColumn dataField='SourceName' headerAlign='center'>Исходный
-                                продукт</TableHeaderColumn>
+                                товар</TableHeaderColumn>
                             <TableHeaderColumn dataField='TargetEan' width='150'  headerAlign='center'
                                                dataAlign='center'>Результирующий <br/> штрихкод</TableHeaderColumn>
                             <TableHeaderColumn dataField='TargetName' headerAlign='center'>Результирующий
-                                продукт</TableHeaderColumn>
+                                товар</TableHeaderColumn>
                             <TableHeaderColumn dataField='Count' width='100' headerAlign='center'
                                                dataAlign='center'>Количество</TableHeaderColumn>
                             <TableHeaderColumn dataField="button" dataFormat={this.buttonFormatter.bind(this)}

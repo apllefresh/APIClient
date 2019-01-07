@@ -45,7 +45,7 @@ export class ReSortBody extends Component {
         return (
             <Grid fluid style={{height: '100%', overflow: 'auto'}}>
                 <h1>Акт пересорта </h1>
-
+                <p></p>
                 <Row style={{height: '100px', width: '100%'}}>
                     <Col md={4}>
                         <WarehouseDropDownList updateDat={this.updateWarehouseId}/>
